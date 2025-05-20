@@ -1,0 +1,1133 @@
+.admin_main .admin_main a {
+  text-decoration: none;
+  color: #f2f2f2;
+  display: block;
+}
+
+.admin_main .admin_main {
+  font-family: "SF Pro Display", sans-serif;
+  font-weight: 400;
+  top: 0;
+  left: 0;
+  padding: 0;
+  background: #0a0a0e;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background-size: 100% auto;
+}
+
+html,
+body {
+  width: 100vw;
+  overflow-x: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+  background-color: #1a1a1a;
+  height: 5px;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: #4f4f4f;
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  background-color: #1a1a1a;
+}
+
+@font-face {
+  font-family: "SF Pro Display";
+  src: url("../fonts/SF-Pro-Display-Bold.otf") format("opentype");
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: "SF Pro Display";
+  src: url("../fonts/SF-Pro-Display-Semibold.otf") format("opentype");
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: "SF Pro Display";
+  src: url("../fonts/SF-Pro-Display-SemiboldItalic.otf") format("opentype");
+  font-weight: 600;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "SF Pro Display";
+  src: url("../fonts/SF-Pro-Display-Medium.otf") format("opentype");
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: "SF Pro Display";
+  src: url("../fonts/SF-Pro-Display-Regular.otf") format("opentype");
+  font-weight: 400;
+}
+
+.admin_main .admin_main {
+  width: 100%;
+  height: auto;
+  margin-top: 34px;
+  height: 100%;
+  margin-bottom: 95px;
+}
+
+.admin_main .admin_main_sections {
+  display: grid;
+  width: 100%;
+  height: 100%;
+  grid-template-columns: 110px calc(100% - 125px);
+  grid-column-gap: 15px;
+}
+.admin_main .admin_main_navigations {
+  width: 100%;
+  height: 100%;
+  border-radius: 36px;
+  background: linear-gradient(180deg, #111116 47.4%, #8b52ff 667.4%);
+}
+.admin_main .admin_main_navigations_content {
+  padding-top: 40px;
+  padding-bottom: 40px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.admin_main .admin_main_navigations_navs {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+}
+.admin_main .admin_main_navigations_nav {
+  width: 100%;
+  padding-top: 26px;
+  padding-bottom: 26px;
+}
+.admin_main .admin_main_navigations_nav a {
+  cursor: pointer;
+  transition: all 0.5s;
+}
+.admin_main .admin_main_navigations_nav a:hover {
+  opacity: 0.5;
+}
+.admin_main .admin_main_navigations_nav svg {
+  vertical-align: middle;
+  display: block;
+  margin: 0 auto;
+}
+
+.admin_main .admin_main_navigations_nav p {
+  color: #8b52ff;
+  text-align: center;
+  font-family: "SF Pro Display", sans-serif;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 20.081px; /* 167.342% */
+  letter-spacing: 0.18px;
+  margin-top: 13px;
+  display: none;
+}
+.admin_main .admin_main_navigations_nav_active p {
+  display: block;
+}
+.admin_main .admin_main_navigations_nav_active svg path {
+  fill: #8b52ff;
+}
+.admin_main .admin_main_navigations_nav_active {
+  position: relative;
+}
+.admin_main .admin_main_navigations_nav_active::before {
+  content: " ";
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  background: url(../img/admin_active.png) center no-repeat;
+}
+.admin_main .admin_main_navigations_back svg {
+  display: block;
+  margin: 0 auto;
+  vertical-align: middle;
+}
+
+.admin_main .admin_main_navigations_back {
+  margin-top: auto;
+  cursor: pointer;
+  transition: all 0.5s;
+  padding-top: 31px;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.admin_main .admin_main_navigations_back:hover {
+  opacity: 0.5;
+}
+
+.admin_main .admin_main_dash {
+  width: 100%;
+  height: 100%;
+}
+
+.admin_main .admin_main_dash_sections {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 885px calc(100% - 1025px);
+  grid-column-gap: 40px;
+}
+
+.admin_main .admin_main_dash_section {
+  width: 100%;
+  height: 100%;
+}
+
+.admin_main .admin_main_dash_section_graf {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  background: #111116;
+}
+.admin_main .admin_main_dash_section_graf_content {
+  padding: 41px 55px;
+}
+.admin_main .admin_main_dash_section_graf_tittle {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #fff;
+  text-align: center;
+  font-family: "SF Pro Display", sans-serif;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+.admin_main .admin_main_dash_section_graf_text {
+  margin-top: 10px;
+  color: #787e87;
+  font-family: "SF Pro Display", sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  max-width: 500px;
+}
+
+.admin_main .admin_main_dash_section_graf_img {
+  width: 100%;
+  margin-top: 54px;
+}
+
+.admin_main .admin_main_dash_section_stats {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: auto;
+  gap: 7px;
+}
+.admin_main .admin_main_dash_section_stat_block {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  background: #111116;
+}
+.admin_main .admin_main_dash_section_stat_block_content {
+  padding: 41px 37px;
+  padding-bottom: 62px;
+}
+.admin_main .admin_main_dash_section_stat_block_tittle {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #fff;
+  text-align: center;
+  font-family: "SF Pro Display", sans-serif;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+.admin_main .admin_main_dash_section_stat_block_price {
+  margin-top: 31.5px;
+  color: #fff;
+  text-align: left;
+  font-family: "SF Pro Display", sans-serif;
+  font-size: 64px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.admin_main .admin_main_dash_section_stat_block_price span {
+  background: linear-gradient(165deg, #feef9d 7.09%, #f26b0c 171.32%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family: "SF Pro Display", sans-serif;
+  font-size: 64px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.admin_main .admin_main_dash_section_stat_block:last-child
+  .admin_main_dash_section_stat_block_price
+  span {
+  background: linear-gradient(185deg, #844cf6 7.38%, #40119d 132.74%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.admin_main .admin_main_dash_section_alls {
+  width: 100%;
+  height: auto;
+  margin-top: 13.59px;
+  border-radius: 10.447px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  background: #111116;
+}
+.admin_main .admin_main_dash_section_alls_content {
+  padding: 21px 48px;
+}
+
+.admin_main .admin_main_dash_section_alls_grafs {
+  margin-top: 35px;
+}
+
+.admin_main .admin_main_dash_section_bottom {
+  display: grid;
+  grid-template-columns: 483px calc(100% - 549px);
+  grid-column-gap: 66px;
+  margin-top: 29px;
+}
+.admin_main .admin_main_dash_section_bottom_latest {
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  background: #111116;
+}
+.admin_main .admin_main_dash_section_bottom_latest_content {
+  padding: 15px;
+  padding-bottom: 40px;
+}
+.admin_main .admin_main_dash_section_bottom_latest_up {
+  display: flex;
+  align-items: center;
+}
+.admin_main .admin_main_dash_section_bottom_latest_up_tittle {
+  color: #fff;
+  text-align: center;
+  font-family: "SF Pro Display", sans-serif;
+  font-size: 16.923px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+.admin_main .admin_main_dash_section_bottom_latest_up_all {
+  margin-left: auto;
+  cursor: pointer;
+  transition: all 0.5s;
+  color: #787e87;
+  text-align: center;
+  font-family: "SF Pro Display", sans-serif;
+  font-size: 12.692px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 14.159px; /* 111.561% */
+  letter-spacing: 0.19px;
+}
+.admin_main .admin_main_dash_section_bottom_latest_up_all:hover {
+  opacity: 0.5;
+}
+.admin_main .admin_main_dash_section_bottom_latest_blocks {
+  display: flex;
+  flex-direction: column;
+  margin-top: 27px;
+  gap: 7px;
+}
+.admin_main .admin_main_dash_section_bottom_latest_block {
+  width: 100%;
+  height: auto;
+  border-radius: 15.512px;
+  border: 0.705px solid rgba(255, 255, 255, 0.05);
+}
+.admin_main .admin_main_dash_section_bottom_latest_block_content {
+  padding: 9.87px 14.1px;
+}
+.admin_main .admin_main_dash_section_bottom_latest_block_nickname {
+  display: flex;
+  align-items: center;
+  color: #fff;
+  text-align: center;
+  font-family: "SF Pro Display", sans-serif;
+  font-size: 16.923px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+.admin_main .admin_main_dash_section_bottom_latest_block_avatar {
+  border-radius: 50.768px;
+  width: 76.857px;
+  height: 76.857px;
+  border: 5px solid transparent;
+  object-fit: cover;
+  border-radius: 50.768px;
+  background: #111116 50% / cover no-repeat;
+  margin-right: 10px;
+}
+.admin_main .admin_main_dash_section_bottom_latest_block_arrow {
+  vertical-align: middle;
+  margin-left: auto;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+
+.admin_main .admin_main_dash_section_bottom_latest_block_arrow:hover {
+  opacity: 0.5;
+}
+
+.admin_main .admin_main_dash_section_bottom_stats {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  background: #111116;
+}
+.admin_main .admin_main_dash_section_bottom_stat_block {
+  width: 100%;
+  height: 100%;
+}
+.admin_main .admin_main_dash_section_bottom_stat_block:first-child {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+.admin_main .admin_main_dash_section_bottom_stat_block:last-child {
+  margin-top: 17px;
+}
+.admin_main .admin_main_dash_section_bottom_stat_block_content {
+  padding: 15px 37px;
+}
+.admin_main .admin_main_dash_section_bottom_stat_block_tittle {
+  color: #fff;
+  text-align: center;
+
+  /* Heading */
+  font-family: "SF Pro Display", sans-serif;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+.admin_main .admin_main_dash_section_bottom_stat_block_text {
+  margin-top: 10px;
+  text-align: center;
+  font-family: "SF Pro Display", sans-serif;
+  font-size: 64px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  background: linear-gradient(165deg, #fff 40.66%, #171616 95.23%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.admin_main .admin_main_deal {
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  background: #111116;
+}
+.admin_main .admin_main_deal_content {
+  padding: 24px 30px;
+  padding-bottom: 16px;
+  height: 100%;
+}
+
+.admin_main .admin_main_deal_tittle {
+  color: #fff;
+  text-align: left;
+  font-family: "SF Pro Display", sans-serif;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+.admin_main .admin_main_deal_text {
+  color: #787e87;
+  text-align: left;
+  font-family: "SF Pro Display", sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.admin_main .admin_main_deal_up {
+  display: flex;
+  align-items: center;
+  margin-top: 7px;
+}
+.admin_main .admin_main_deal_up_sort_items {
+  display: flex;
+  align-items: center;
+  gap: 38px;
+  margin-top: 33px;
+}
+.admin_main .admin_main_deal_up_sort_item {
+  color: #787e87;
+  text-align: center;
+  font-family: "SF Pro Display", sans-serif;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+.admin_main .admin_main_deal_up_sort_item:hover {
+  color: #fff;
+}
+.admin_main .admin_main_deal_up_item {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 31px;
+}
+.admin_main .admin_main_deal_up_item_filter {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+.admin_main .admin_main_deal_up_item_filter_text {
+  color: #787e87;
+  font-family: "SF Pro Display", sans-serif;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 20px; /* 111.111% */
+  letter-spacing: 0.27px;
+}
+.admin_main .admin_main_deal_up_item_filter_select {
+  position: relative;
+}
+.admin_main .admin_main_deal_up_item_filter_selected {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #fff;
+  font-family: "SF Pro Display", sans-serif;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 20px; /* 111.111% */
+  letter-spacing: 0.27px;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+.admin_main .admin_main_deal_up_item_filter_selected svg {
+  vertical-align: middle;
+}
+.admin_main .admin_main_deal_up_item_search {
+  border-radius: 6px;
+  padding: 16px 10px;
+  color: #fff;
+  font-family: "SF Pro Display", sans-serif;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 20px; /* 111.111% */
+  letter-spacing: 0.27px;
+  background: #15151b url(../img/admin_deal_search.svg) left no-repeat;
+  background-position-x: 10px;
+  padding-left: 32px;
+  outline: none;
+  border: none;
+}
+
+.admin_main .admin_main_deal_up_item_search::placeholder {
+  color: #787e87;
+}
+
+table.admin_main_deal_tabble_main {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 9px;
+  height: auto;
+}
+
+table.admin_main_deal_tabble_main td,
+table.admin_main_deal_tabble_main th {
+  width: auto;
+  height: 35px;
+}
+table.admin_main_deal_tabble_main th {
+  background: #4e6982;
+  color: #fff;
+  font-weight: normal;
+}
+
+.admin_main .admin_main_deal_tabble {
+  margin-top: 33px;
+}
+.admin_main .admin_main_deal_tabble_main {
+}
+.admin_main .admin_main_deal_tabble_main_tittle {
+  color: #fff;
+  text-align: center;
+  font-family: "SF Pro Display", sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 32.23px; /* 161.148% */
+  letter-spacing: 0.3px;
+  padding-bottom: 6.5px;
+}
+
+.admin_main .admin_main_deal_tabble_main_text {
+  color: #fff;
+  text-align: center;
+  font-family: "SF Pro Display", sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 22px; /* 110% */
+  letter-spacing: 0.6px;
+  padding-top: 33px;
+  padding-bottom: 33px;
+}
+.admin_main .admin_main_deal_tabble_main_text img {
+  vertical-align: middle;
+  margin-right: 5px;
+}
+.admin_main .admin_main_deal_tabble_main_text_status {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  color: #fff;
+  text-align: center;
+  font-family: "SF Pro Display", sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 22px; /* 157.143% */
+  letter-spacing: 0.42px;
+
+  padding-top: 36px;
+  padding-bottom: 36px;
+}
+.admin_main .admin_main_deal_tabble_main_text_status_end {
+  color: #ff4e4e;
+}
+.admin_main .admin_main_deal_tabble_main_lin {
+  color: #fff;
+  text-align: center;
+  font-family: "SF Pro Display", sans-serif;
+  border-radius: 6px;
+  background: #15151b;
+  cursor: pointer;
+  transition: all 0.5s;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 22px; /* 157.143% */
+  letter-spacing: 0.42px;
+  width: fit-content;
+  margin-left: auto;
+  padding: 9px 10px;
+}
+.admin_main .admin_main_deal_tabble_main_lin:hover {
+  opacity: 0.5;
+}
+
+.admin_main .admin_main_deal_tabble_main
+  thead
+  td:last-child
+  .admin_main_deal_tabble_main_tittle {
+  text-align: right;
+  display: block;
+  margin-right: 36px;
+}
+
+.admin_main .admin_main_deal_tabble_main_text_status_active {
+  color: #0f0;
+}
+.admin_main .admin_main_deal_tabble_main_text_status_wait {
+  color: #8b52ff;
+}
+.admin_main .admin_main_deal_tabble_main_line td {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+.admin_main .admin_main_deal_paggination {
+  display: flex;
+  align-items: center;
+  margin-top: 29px;
+  gap: 20px;
+  justify-content: center;
+  margin-bottom: 32px;
+}
+.admin_main .admin_main_deal_paggination_item_text {
+  border-radius: 3px;
+  background: #15151b;
+  color: #fff;
+  text-align: center;
+  font-family: "SF Pro Display", sans-serif;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  transition: all 0.5s;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  padding: 5px;
+}
+.admin_main .admin_main_deal_paggination_item_text:hover {
+  opacity: 0.5;
+}
+.admin_main .admin_main_deal_paggination_buttons {
+  display: flex;
+  align-items: center;
+  gap: 37px;
+}
+.admin_main .admin_main_deal_paggination_button {
+  outline: none;
+  border: none;
+  cursor: pointer;
+  transition: all 0.5s;
+  color: #787e87;
+  text-align: center;
+  font-family: "SF Pro Display", sans-serif;
+  font-size: 16.923px;
+  font-style: normal;
+  font-weight: 600;
+  background: transparent;
+  line-height: normal;
+}
+
+.admin_main .admin_main_deal_paggination_button:hover {
+  opacity: 0.5;
+}
+
+.admin_main .admin_main_users
+  .admin_main_deal_tabble_main
+  thead
+  td:last-child
+  .admin_main_deal_tabble_main_tittle {
+  text-align: center;
+  display: block;
+  margin-right: 0px;
+}
+.admin_main .admin_main_users .admin_main_deal_tabble_main_lin {
+  display: block;
+  margin: 0 auto;
+}
+
+.admin_main .admin_main_deal_content {
+  display: flex;
+  flex-direction: column;
+}
+
+.admin_main .admin_main_deal_paggination {
+  margin-top: auto;
+}
+
+.admin_main .admin_main_deal_tabble {
+  margin-bottom: 29px;
+}
+
+.admin_main .admin_main_users .admin_main_deal_tabble_main_text:first-child {
+  border-left: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.admin_main .admin_main_users .admin_main_deal_up_sort_items {
+  margin-top: 57px;
+}
+
+.admin_main .admin_main_deal_tabble_main_time {
+  color: #787e87;
+  text-align: center;
+  font-family: "SF Pro Display", sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 22px; /* 110% */
+  letter-spacing: 0.6px;
+}
+
+.admin_main .admin_main_deal_tabble_main_summa {
+  text-align: center;
+  font-family: "SF Pro Display", sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 22px; /* 110% */
+  letter-spacing: 0.6px;
+  background: linear-gradient(180deg, #95f562 0%, #0c681d 140.91%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.admin_main .admin_main_deal_tabble_main_accept {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  color: #787e87;
+  text-align: center;
+  font-family: "SF Pro Display", sans-serif;
+  font-size: 20px;
+  font-style: italic;
+  font-weight: 600;
+  line-height: 22px;
+  letter-spacing: 0.6px;
+  cursor: pointer;
+  transition: all 0.5s;
+  margin-left: auto;
+  justify-content: center;
+}
+
+.admin_main .admin_main_deal_tabble_main_accept:hover {
+  opacity: 0.5;
+}
+.admin_main .admin_main_deal_tabble_main_accept svg {
+  vertical-align: middle;
+}
+
+.admin_main .admin_main_requests
+  .admin_main_deal_tabble_main
+  thead
+  td:last-child
+  .admin_main_deal_tabble_main_tittle {
+  text-align: center;
+  display: block;
+}
+
+.admin_modal {
+  display: none;
+}
+.admin_modal_overlay {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 10;
+  background: rgb(0, 0, 0, 0.7);
+}
+ .admin_modal_rect {
+  width: 727px;
+  height: auto;
+  position: fixed;
+  left: calc(50% - 364px);
+  top: calc(50% - 362px);
+  z-index: 11;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  background: rgba(17, 17, 22, 0.8);
+  backdrop-filter: blur(25px);
+}
+.admin_modal_rect_content {
+  padding: 61px 32px;
+}
+.admin_modal_rect_tittle {
+  color: #fff;
+
+  /* Heading */
+  font-family: "SF Pro Display", sans-serif;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+.admin_modal_rect_image {
+  display: block;
+  margin: 0 auto;
+  width: 258px;
+  height: 258px;
+  border-radius: 100px;
+  object-fit: cover;
+  margin-top: 42px;
+}
+.admin_modal_rect_nickname {
+  margin-top: 30px;
+  color: #fff;
+  text-align: center;
+  font-family: "SF Pro Display", sans-serif;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 20.081px; /* 91.278% */
+  letter-spacing: 0.33px;
+}
+.admin_modal_rect_stats {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  justify-content: center;
+  margin-top: 20px;
+}
+.admin_modal_rect_stats_text {
+  color: #787e87;
+  font-family: "SF Pro Display", sans-serif;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 20.081px; /* 111.561% */
+  letter-spacing: 0.27px;
+  padding: 22px 15px;
+  border-radius: 6px;
+  background: #15151b;
+}
+.admin_modal_rect_stats_text span {
+  color: #fff;
+  margin-left: 5px;
+}
+.admin_modal_rect_buttons {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+  gap: 10px;
+  justify-content: center;
+}
+.admin_modal_rect_button {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  transition: all 0.5s;
+  color: #2ece70;
+  font-family: "SF Pro Display";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 26px; /* 162.5% */
+  letter-spacing: 0.48px;
+  padding: 14px 34px;
+  border-radius: 12px;
+  background: rgba(46, 206, 112, 0.1);
+}
+.admin_modal_rect_button:hover {
+  opacity: 0.5;
+}
+.admin_modal_rect_bottom_button {
+  display: block;
+  margin: 0 auto;
+  padding: 14px 20px;
+  border-radius: 12px;
+  background: rgba(255, 75, 79, 0.1);
+  outline: none;
+  border: none;
+  color: #ff4b4f;
+  font-family: "SF Pro Display";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 26px; /* 162.5% */
+  letter-spacing: 0.48px;
+  width: 100%;
+  margin-top: 10px;
+  max-width: 365px;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+
+.admin_modal_rect_bottom_button svg {
+  vertical-align: middle;
+  margin-right: 5px;
+}
+
+.admin_modal_rect_bottom_button:hover {
+  opacity: 0.5;
+}
+
+.admin_modal_popup_rect {
+  width: 727px;
+  height: auto;
+  position: fixed;
+  left: calc(50% - 364px);
+  top: calc(50% - 467px);
+  z-index: 11;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  background: rgba(17, 17, 22, 0.8);
+  backdrop-filter: blur(25px);
+}
+.admin_modal_popup_rect_content {
+  padding: 32px;
+}
+.admin_modal_popup_rect_blocks {
+  display: flex;
+  flex-direction: column;
+  margin-top: 60px;
+  gap: 60px;
+}
+.admin_modal_popup_rect_block {
+  width: 100%;
+  height: auto;
+}
+.admin_modal_popup_rect_block_tittle {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #fff;
+  font-family: "SF Pro Display", sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+.admin_modal_popup_rect_block_upload {
+  margin-top: 35px;
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  cursor: pointer;
+  transition: all 0.5s;
+}
+.admin_modal_popup_rect_block_upload:hover {
+  opacity: 0.5;
+}
+.admin_modal_popup_rect_block_upload_content {
+  padding: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.admin_modal_popup_rect_block_upload_img {
+  vertical-align: middle;
+  margin-right: 28px;
+}
+.admin_modal_popup_rect_block_upload_texts {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.admin_modal_popup_rect_block_upload_texts_tittle {
+  color: #fff;
+  font-family: "SF Pro Display", sans-serif;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+.admin_modal_popup_rect_block_upload_texts_text {
+  color: #fff;
+  font-family: "SF Pro Display", sans-serif;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.admin_modal_popup_rect_block_upload_texts_text span {
+  color: #8b52ff;
+}
+.admin_modal_popup_rect_button {
+  display: block;
+  margin: 0 auto;
+  margin-top: 47px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  transition: all 0.5s;
+  border-radius: 4.599px;
+  background: #8b52ff;
+  padding: 6px 81px;
+  color: rgba(255, 255, 255, 0.8);
+  font-family: "SF Pro Display", sans-serif;
+  font-size: 10.73px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 15.329px; /* 142.857% */
+  letter-spacing: 0.161px;
+}
+.admin_modal_popup_rect_button:hover {
+  opacity: 0.5;
+}
+.admin_modal_popup_rect_block_input {
+  margin-top: 35px;
+  width: 100%;
+  height: auto;
+  min-height: 311px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  background: transparent;
+  outline: none;
+  color: #fff;
+  font-family: "SF Pro Display", sans-serif;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  padding: 25px 20px;
+  resize: none;
+}
+
+.admin_modal_popup_rect_block_input::placeholder {
+  color: #787e87;
+}
+
+@media (max-height: 958px) {
+  .admin_modal_popup_rect_block_input {
+    min-height: 150px;
+  }
+  .admin_modal_popup_rect {
+    top: calc(50% - 387px);
+  }
+}
+
+@media (min-width: 1200px) and (max-width: 1439px) {
+  .admin_main_dash_sections {
+    width: 100%;
+    height: 100%;
+    grid-template-columns: 100%;
+    grid-column-gap: 40px;
+  }
+  .container {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+@media (min-width: 1440px) and (max-width: 1919px) {
+
+  .admin_main_dash_sections {
+    display: grid;
+    grid-template-columns: 700px calc(100% - 740px);
+    grid-column-gap: 40px;
+  }
+  .admin_main_dash_section_bottom {
+    grid-template-columns: 400px calc(100% - 430px);
+    grid-column-gap: 30px;
+    margin-top: 29px;
+  }
+  .admin_main_dash_section_alls_grafs {
+    width: 100%;
+  }
+}

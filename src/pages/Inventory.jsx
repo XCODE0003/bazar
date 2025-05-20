@@ -1,0 +1,180 @@
+import { useState } from "react";
+import Select from "../components/Select";
+import ProductAddCart from "../components/Product/ProductAddCart";
+const sortOptions = [
+  {
+    id: 1,
+    name: "По популярности",
+    value: "popular",
+  },
+  {
+    id: 2,
+    name: "По цене",
+    value: "price",
+  },
+  {
+    id: 3,
+    name: "По редкости",
+    value: "rare",
+  },
+];
+export default function MainPage() {
+  const [selectedItems, setSelectedItems] = useState([]);
+  const [sort, setSort] = useState(sortOptions[0]);
+  return (
+    <div className="container flex flex-col flex-1 h-full gap-4 mx-auto">
+      <div className="flex flex-col gap-[30px] p-[30px] bg-accent-300 rounded-2xl border border-white/5">
+        <div className="flex items-center gap-8">
+          <h1 className="text-2xl font-semibold">Ваш инвентарь</h1>
+          <p className="text-primary">55 предметов всего</p>
+        </div>
+        <div className="flex w-full gap-8">
+          <div className="flex flex-col w-full gap-4">
+            <div className="h-fit flex justify-between w-full">
+              <div className="flex items-center justify-between w-full gap-3">
+                <div className="input-wrapper !py-3 !px-5 min-w-[380px]">
+                  <svg
+                    width="27"
+                    height="28"
+                    viewBox="0 0 27 28"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M25.9929 26.6804L18.8225 19.51M11.6521 23.0952C5.71194 23.0952 0.896484 18.2798 0.896484 12.3396C0.896484 6.39944 5.71194 1.58398 11.6521 1.58398C17.5923 1.58398 22.4077 6.39944 22.4077 12.3396C22.4077 18.2798 17.5923 23.0952 11.6521 23.0952Z"
+                      stroke="#787E87"
+                      stroke-width="1.7926"
+                    />
+                  </svg>
+
+                  <input
+                    type="text"
+                    placeholder="Найти предмет"
+                    className="input-field w-full"
+                  />
+                </div>
+                <div className="flex items-center gap-2">
+                  <button className="btn btn-primary">Выбрать все</button>
+                  <Select
+                    options={sortOptions}
+                    defaultValue={sort}
+                    onChange={setSort}
+                  />
+                </div>
+              </div>
+            </div>
+            <div className="2xl:grid-cols-6 gap-7 grid grid-cols-5">
+              {Array.from({ length: 100 }).map((_, index) => (
+                <ProductAddCart
+                  key={index}
+                  isAuthor={index % 2 === 0}
+                  isInInventory={selectedItems.includes(index)}
+                  setSelectedItem={() => {
+                    if (selectedItems.includes(index)) {
+                      setSelectedItems(
+                        selectedItems.filter((item) => item !== index)
+                      );
+                    } else {
+                      setSelectedItems([...selectedItems, index]);
+                    }
+                  }}
+                  product={{
+                    name: `Наклейка|Titan ${index + 1}`,
+                    image: "/assets/images/skins/knife.png",
+                    price: "361 215.18",
+                    rarity: "field_tested",
+                    phase: 0.05721636621,
+                    condition: 50,
+                  }}
+                />
+              ))}
+            </div>
+          </div>
+          <div className="px-3.5 py-6 max-w-[440px] max-h-[850px] w-full bg-accent-200 rounded-2xl flex flex-col">
+            <p className="text-2xl font-semibold">Выставить предметы</p>
+            <div className="h-full flex justify-center items-center flex-col gap-3.5">
+              <div className="text-gray-100 flex justify-center items-center flex-col gap-3.5 ">
+                <svg
+                  width="171"
+                  height="214"
+                  viewBox="0 0 171 214"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <g clip-path="url(#clip0_0_7616)">
+                    <path
+                      d="M130.906 0.503906H40.0957V116.258H130.906V0.503906Z"
+                      stroke="#787E87"
+                    />
+                    <path
+                      d="M131.1 82.1582H39.9004V173.358H131.1V82.1582Z"
+                      stroke="#787E87"
+                    />
+                  </g>
+                  <rect
+                    x="0.5"
+                    y="1.00391"
+                    width="170"
+                    height="211.754"
+                    rx="11.5"
+                    stroke="white"
+                    stroke-opacity="0.05"
+                  />
+                  <defs>
+                    <clipPath id="clip0_0_7616">
+                      <rect
+                        y="0.503906"
+                        width="171"
+                        height="212.754"
+                        rx="12"
+                        fill="white"
+                      />
+                    </clipPath>
+                  </defs>
+                </svg>
+                <p className="text-2xl font-semibold">
+                  Упс, пока ничего не выбрано...
+                </p>
+                <p className="text-lg font-semibold">
+                  Выберите предметы для выставления
+                </p>
+              </div>
+            </div>
+            <div className="py-10  flex justify-center items-center gap-6 border-white/5 border-t-2">
+              <button className="btn btn-border !py-2 !px-8 h-full">
+                <svg
+                  width="21"
+                  height="21"
+                  viewBox="0 0 21 21"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M12.7385 2.12861L16.0893 5.47513C16.2336 5.61927 16.3204 5.81112 16.3334 6.0147C16.3463 6.21828 16.2845 6.41959 16.1596 6.58086L16.0901 6.65961L12.7394 10.0153C12.589 10.1672 12.3862 10.2558 12.1727 10.263C11.9591 10.2703 11.7508 10.1956 11.5904 10.0543C11.4301 9.91303 11.3298 9.7158 11.3101 9.503C11.2904 9.2902 11.3528 9.07792 11.4845 8.90961L11.5541 8.83087L13.4724 6.91007H4.60721C4.40189 6.91025 4.20365 6.83502 4.05015 6.69866C3.89665 6.5623 3.79858 6.37431 3.77456 6.1704L3.76953 6.07239C3.76956 5.86722 3.84489 5.66919 3.98123 5.51587C4.11756 5.36254 4.30543 5.26459 4.5092 5.24058L4.60721 5.23472H13.4782L11.5549 3.31392C11.4106 3.16979 11.3238 2.97793 11.3108 2.77435C11.2978 2.57077 11.3596 2.36946 11.4845 2.20819L11.5541 2.12861C11.6982 1.98426 11.8901 1.89746 12.0936 1.8845C12.2972 1.87155 12.4985 1.93333 12.6598 2.05824L12.7385 2.12861ZM16.3263 14.3512L16.3322 14.4492C16.3322 14.6543 16.2568 14.8524 16.1205 15.0057C15.9842 15.159 15.7963 15.257 15.5925 15.281L15.4945 15.2868H6.62853L8.55016 17.2076C8.69451 17.3518 8.78131 17.5436 8.79426 17.7472C8.80722 17.9508 8.74544 18.1521 8.62052 18.3134L8.551 18.3921C8.40686 18.5365 8.215 18.6233 8.01142 18.6362C7.80784 18.6492 7.60653 18.5874 7.44526 18.4625L7.36568 18.3921L4.01497 15.0448C3.87074 14.9005 3.7841 14.7086 3.7713 14.505C3.7585 14.3015 3.82042 14.1002 3.94544 13.939L4.01497 13.8603L7.36568 10.5062C7.51608 10.3544 7.71882 10.2658 7.93241 10.2585C8.146 10.2513 8.35428 10.326 8.51462 10.4672C8.67497 10.6085 8.77524 10.8058 8.79493 11.0186C8.81462 11.2314 8.75222 11.4437 8.62052 11.612L8.551 11.6907L6.63271 13.6115H15.4945C15.6997 13.6115 15.8977 13.6868 16.051 13.8232C16.2044 13.9595 16.3023 14.1474 16.3263 14.3512Z"
+                    fill="#F0F0F0"
+                  />
+                </svg>
+                Обмен
+              </button>
+              <button className="btn btn-border !py-2 !px-8 h-full">
+                <svg
+                  width="14"
+                  height="14"
+                  viewBox="0 0 14 14"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M-0.00976562 1.49205C-0.00976562 1.34393 0.049071 1.20189 0.153801 1.09716C0.258531 0.99243 0.400576 0.933594 0.548686 0.933594H0.964174C1.67155 0.933594 2.09597 1.40939 2.33797 1.85169C2.49954 2.14655 2.61645 2.48832 2.70803 2.79808C2.73281 2.79612 2.75764 2.79513 2.78249 2.7951H12.0885C12.7066 2.7951 13.1533 3.38631 12.9835 3.98125L11.6224 8.75341C11.5004 9.18145 11.2422 9.55807 10.887 9.82624C10.5317 10.0944 10.0988 10.2395 9.65368 10.2396H5.22479C4.77616 10.2397 4.33994 10.0923 3.98318 9.82033C3.62642 9.54832 3.36887 9.16667 3.2501 8.73405L2.68421 6.67001L1.74601 3.50694L1.74526 3.50098C1.6291 3.07879 1.52039 2.68341 1.35807 2.38855C1.20245 2.10188 1.07735 2.0505 0.964919 2.0505H0.548686C0.400576 2.0505 0.258531 1.99166 0.153801 1.88693C0.049071 1.7822 -0.00976562 1.64016 -0.00976562 1.49205ZM4.83015 13.9641C5.22511 13.9641 5.6039 13.8072 5.88318 13.528C6.16246 13.2487 6.31936 12.8699 6.31936 12.4749C6.31936 12.08 6.16246 11.7012 5.88318 11.4219C5.6039 11.1426 5.22511 10.9857 4.83015 10.9857C4.43519 10.9857 4.0564 11.1426 3.77712 11.4219C3.49784 11.7012 3.34095 12.08 3.34095 12.4749C3.34095 12.8699 3.49784 13.2487 3.77712 13.528C4.0564 13.8072 4.43519 13.9641 4.83015 13.9641ZM10.0424 13.9641C10.4373 13.9641 10.8161 13.8072 11.0954 13.528C11.3747 13.2487 11.5316 12.8699 11.5316 12.4749C11.5316 12.08 11.3747 11.7012 11.0954 11.4219C10.8161 11.1426 10.4373 10.9857 10.0424 10.9857C9.64741 10.9857 9.26862 11.1426 8.98934 11.4219C8.71006 11.7012 8.55316 12.08 8.55316 12.4749C8.55316 12.8699 8.71006 13.2487 8.98934 13.528C9.26862 13.8072 9.64741 13.9641 10.0424 13.9641Z"
+                    fill="#F0F0F0"
+                  />
+                </svg>
+                Маркет
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
