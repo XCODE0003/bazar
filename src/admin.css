@@ -92,8 +92,12 @@ body {
   grid-template-columns: 110px calc(100% - 125px);
   grid-column-gap: 15px;
 }
+.admin_main main{
+    @apply w-full
+}
 .admin_main .admin_main_navigations {
   width: 100%;
+  max-width: 110px;
   height: 100%;
   border-radius: 36px;
   background: linear-gradient(180deg, #111116 47.4%, #8b52ff 667.4%);

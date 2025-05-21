@@ -5,7 +5,7 @@ export default function FilterCategories() {
     {
       id: 1,
       name: "Все",
-      value: "all"
+      value: "all",
     },
     {
       id: 2,
@@ -56,6 +56,7 @@ export default function FilterCategories() {
       <SelectCategories
         options={options}
         title="Винтовки"
+
       />
       <SelectCategories
         options={options}

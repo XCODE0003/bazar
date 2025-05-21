@@ -8,6 +8,7 @@
   --color-gray-100: #787e87;
   --color-gray-200: #23232C;
   --color-green-200: #0ead4f;
+  --color-purple-900: #302051;
   --color-factory_new: #1333ff;
   --color-field_tested: #ef3838;
   --color-primary: #8b52ff;
@@ -18,6 +19,15 @@
   --breakpoint-sm: 768px;
   --breakpoint-xs: 480px;
 }
+.hidden-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+.hidden-scrollbar::-webkit-scrollbar {
+  display: none;  /* Chrome, Safari and Opera */
+}
+
+
 ::-webkit-scrollbar {
   width: 2px;
   height: 2px;

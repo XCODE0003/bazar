@@ -3,9 +3,13 @@ import Modal from "./Modal/Modal";
 
 const BalanceModal = ({ isOpen, onClose }) => {
   const [amount, setAmount] = useState("");
-  const [paymentMethod, setPaymentMethod] = useState("card");
+  const [paymentMethod, setPaymentMethod] = useState(null);
 
+  const handlePayment = () => {
+    console.log(`Оплата ${amount} руб. методом: ${paymentMethod}`);
 
+    onClose();
+  };
 
   return (
     <Modal isOpen={isOpen} onClose={onClose}>
@@ -33,26 +37,29 @@ const BalanceModal = ({ isOpen, onClose }) => {
                 Или сразу выберете предложенную сумму
               </p>
               <div className="flex gap-2">
-                <button onClick={() => setAmount("1500")} className="btn btn-primary !text-[10px] text-nowrap !px-3">
+                <button onClick={() => setAmount("1500")} className="btn btn-primary !text-xs text-nowrap !px-3">
                   ₽1 500
                 </button>
-                <button onClick={() => setAmount("5000")} className="btn btn-primary !text-[10px] text-nowrap !px-3">
+                <button onClick={() => setAmount("5000")} className="btn btn-primary !text-xs text-nowrap !px-3">
                   ₽5 000
                 </button>
-                <button onClick={() => setAmount("10000")} className="btn btn-primary !text-[10px] text-nowrap !px-3">
+                <button onClick={() => setAmount("10000")} className="btn btn-primary !text-xs text-nowrap !px-3">
                   ₽10 000
                 </button>
-                <button onClick={() => setAmount("25000")} className="btn btn-primary !text-[10px] text-nowrap !px-3">
+                <button onClick={() => setAmount("25000")} className="btn btn-primary !text-xs text-nowrap !px-3">
                   ₽25 000
                 </button>
-                <button onClick={() => setAmount("50000")} className="btn btn-primary !text-[10px] text-nowrap !px-3">
+                <button onClick={() => setAmount("50000")} className="btn btn-primary !text-xs text-nowrap !px-3">
                   ₽50 000
                 </button>
               </div>
             </div>
           </div>
           <div className="flex justify-between items-center">
-            <div className="px-6 pb-9 pt-2 items-center overflow-hidden justify-center bg-accent-200 rounded-lg flex flex-col gap-8 relative">
+            <div
+              className={`!min-w-[220px] px-6 pb-9 pt-2 items-center overflow-hidden justify-center bg-accent-200 rounded-lg flex flex-col gap-8 relative cursor-pointer ${paymentMethod === 'card' ? 'border border-primary' : ''}`}
+              onClick={() => setPaymentMethod('card')}
+            >
               <div className="justify-end w-full flex items-center gap-0.5">
                 <div className="small-tag">RUB</div>
               </div>
@@ -115,11 +122,14 @@ const BalanceModal = ({ isOpen, onClose }) => {
               <div className="absolute top-1/2 -translate-y-1/2 right-1/2 translate-x-1/2 w-[100px] h-[48px] rounded-full bg-primary blur-3xl flex items-center gap-1"></div>
               <div className="flex flex-col text-center gap-1">
                 <p className="">Банковская карта/СБП</p>
-                <p className="text-[10px] text-gray-100">Visa/Mastercard/Мир</p>
+                <p className="text-xs text-gray-100">Visa/Mastercard/Мир</p>
               </div>
             </div>
-            <div className="px-6 pb-9 pt-2 items-center overflow-hidden justify-center bg-accent-200 rounded-lg flex flex-col gap-8 relative">
-            <div className="justify-end w-full flex items-center gap-0.5">
+            <div
+              className={`!min-w-[220px] px-6 pb-9 pt-2 items-center overflow-hidden justify-center bg-accent-200 rounded-lg flex flex-col gap-8 relative cursor-pointer ${paymentMethod === 'crypto' ? 'border border-primary' : ''}`}
+              onClick={() => setPaymentMethod('crypto')}
+            >
+              <div className="justify-end w-full flex items-center gap-0.5">
                 <div className="small-tag">Solana</div>
                 <div className="small-tag">ETH</div>
                 <div className="small-tag">BTC</div>
@@ -167,10 +177,13 @@ const BalanceModal = ({ isOpen, onClose }) => {
               <div className="absolute top-1/2 -translate-y-1/2 right-1/2 translate-x-1/2 w-[100px] h-[48px] rounded-full bg-primary blur-3xl flex items-center gap-1"></div>
               <div className="flex flex-col text-center gap-1">
                 <p className="">Криптовалюта</p>
-                <p className="text-[10px] text-gray-100">Bitcoin/Ethereum/Solana и др.</p>
+                <p className="text-xs text-gray-100">Bitcoin/Ethereum/Solana и др.</p>
               </div>
             </div>
-            <div className="px-6 pb-9 pt-2 items-center overflow-hidden justify-center bg-accent-200 rounded-lg flex flex-col gap-8 relative">
+            <div
+              className={`!min-w-[220px] px-6 pb-9 pt-2 items-center overflow-hidden justify-center bg-accent-200 rounded-lg flex flex-col gap-8 relative cursor-pointer ${paymentMethod === 'cardKZ' ? 'border border-primary' : ''}`}
+              onClick={() => setPaymentMethod('cardKZ')}
+            >
               <div className="justify-end w-full flex items-center gap-0.5">
                 <div className="small-tag">KZT</div>
               </div>
@@ -190,10 +203,42 @@ const BalanceModal = ({ isOpen, onClose }) => {
               <div className="absolute top-1/2 -translate-y-1/2 right-1/2 translate-x-1/2 w-[100px] h-[48px] rounded-full bg-primary blur-3xl flex items-center gap-1"></div>
               <div className="flex flex-col text-center gap-1">
                 <p className="">Банковская карта КЗ</p>
-                <p className="text-[10px] text-gray-100">Visa/Mastercard/Мир</p>
+                <p className="text-xs text-gray-100">Visa/Mastercard/Мир</p>
               </div>
             </div>
           </div>
+
+          {paymentMethod && (
+            <div className="relative max-w-[450px] mx-auto w-full rounded-lg p-6 mt-4">
+              <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-accent-100 px-6 py-1">
+                <p className="text-xl font-semibold">Итого</p>
+              </div>
+
+              <div className="flex flex-col gap-2 mb-4">
+                <div className="flex justify-between items-center">
+                  <p className="text-gray-100">Сумма пополнения</p>
+                  <p className="font-medium">₽ {amount || 0}</p>
+                </div>
+                <div className="flex justify-between items-center">
+                  <p className="text-gray-100">Комиссия</p>
+                  <p className="font-medium">₽ 0</p>
+                </div>
+                <div className="h-[1px] w-full bg-white/5 my-2"></div>
+                <div className="flex justify-between items-center">
+                  <p className="text-lg font-semibold">Всего</p>
+                  <p className="text-lg font-semibold">₽ {amount || 0}</p>
+                </div>
+              </div>
+
+              <button
+                className="btn btn-primary w-full py-3 text-base font-medium"
+                disabled={!amount || amount === '0'}
+                onClick={() => handlePayment()}
+              >
+                Оплатить
+              </button>
+            </div>
+          )}
         </div>
       </div>
     </Modal>

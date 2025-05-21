@@ -7,7 +7,7 @@ import { useModal } from "../hooks/useModal";
 import Cart from "./Header/Cart";
 import Notify from "./Header/Notify";
 import UserMenu from "./Header/UserMenu";
-
+import Offers from "./Header/Offers";
 export default function Header() {
   const { isOpen, openModal, closeModal } = useModal();
 
@@ -24,21 +24,7 @@ export default function Header() {
               Маркет
             </Link>
           </div>
-          <button className="flex items-center text-lg font-semibold gap-2">
-            Офферы
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="12"
-              height="8"
-              viewBox="0 0 12 8"
-              fill="none"
-            >
-              <path
-                d="M0.553094 0.874094C0.685926 0.741302 0.86606 0.666704 1.05389 0.666704C1.24171 0.666704 1.42184 0.741302 1.55468 0.874094L6.01222 5.33164L10.4698 0.874094C10.5351 0.806441 10.6133 0.752478 10.6997 0.715355C10.7861 0.678232 10.879 0.658692 10.9731 0.657875C11.0672 0.657058 11.1604 0.67498 11.2475 0.710596C11.3345 0.746211 11.4136 0.798807 11.4801 0.865315C11.5466 0.931822 11.5992 1.01091 11.6348 1.09796C11.6705 1.18501 11.6884 1.27828 11.6876 1.37234C11.6867 1.46639 11.6672 1.55934 11.6301 1.64576C11.593 1.73218 11.539 1.81034 11.4713 1.87568L6.51301 6.83401C6.38018 6.9668 6.20004 7.0414 6.01222 7.0414C5.82439 7.0414 5.64426 6.9668 5.51143 6.83401L0.553094 1.87568C0.420302 1.74285 0.345703 1.56271 0.345703 1.37489C0.345703 1.18706 0.420302 1.00693 0.553094 0.874094Z"
-                fill="#F0F0F0"
-              />
-            </svg>
-          </button>
+          <Offers />
         </div>
       </div>
       <div className="flex flex-shrink-0 items-center gap-5">

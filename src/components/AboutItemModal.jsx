@@ -18,8 +18,8 @@ const AboutItemModal = ({ isOpen, onClose }) => {
   ];
 
   return (
-    <Modal isOpen={isOpen} onClose={onClose} className="!max-w-[1180px]">
-      <div className="flex flex-col gap-4 ">
+    <Modal isOpen={isOpen} onClose={onClose} className="!max-w-[1180px] !py-4">
+      <div className="flex flex-col gap-3 ">
         <div className="flex gap-6 ">
           <div className="flex flex-col gap-18 pt-10 w-full">
             <div className="flex items-center gap-4">
@@ -43,7 +43,7 @@ const AboutItemModal = ({ isOpen, onClose }) => {
             <div className="flex flex-col gap-2.5 min-w-[330px] bg-accent-200 rounded-lg p-4">
               <div className="flex items-center gap-2.5 flex-col">
                 <div className="flex w-full flex-col gap-1.5 ">
-                  <p className="text-xl  font-semibold">Флоат</p>
+                  <p className="text-xl leading-none font-semibold">Флоат</p>
                   <div className="pr-24">
                     <RareLine valuePercent={50} />
                   </div>
@@ -64,7 +64,7 @@ const AboutItemModal = ({ isOpen, onClose }) => {
                   <p className=" font-normal">629</p>
                 </div>
                 <div className="h-[1px] w-full bg-white/5"></div>
-                <button className="btn btn-transparent !px-2 w-full !justify-between ">
+                <button className="btn btn-transparent !px-2 !py-2 w-full !justify-between ">
                   <div className="flex gap-2 items-center text-xs ">
                     <svg
                       width="25"
@@ -121,22 +121,22 @@ const AboutItemModal = ({ isOpen, onClose }) => {
                     />
                   </svg>
                 </button>
-                <div className="px-2.5 py-5 border w-full border-gray-100/5 flex justify-between items-center rounded-lg">
-                  <div className="flex gap-0.5 ">
+                <div className="px-2.5 py-5  border w-full border-gray-100/5 flex justify-between items-center rounded-lg">
+                  <div className="flex gap-1 ">
                     <img
                       src="/assets/images/project/test_avatar1.png"
                       className="w-9 h-9 rounded-full"
                       alt=""
                       srcset=""
                     />
-                    <div className="flex flex-col gap-1">
-                      <p className="text-xs font-semibold text-white">kinza</p>
-                      <p className="font-semibold text-gray-100 text-[10px]">
+                    <div className="flex flex-col  gap-1">
+                      <p className="text-xs font-semibold leading-none text-white">kinza</p>
+                      <p className="font-semibold leading-none text-gray-100 text-[10px]">
                         Рейтинг: <span className="text-white">75%</span>
                       </p>
                     </div>
                   </div>
-                  <button className="btn btn-border !text-xs font-semibold !text-white/80 !rounded-full">
+                  <button className="btn btn-border !py-2 !px-5 !text-sm font-semibold !text-white/80 !rounded-full">
                     Открыть
                   </button>
                 </div>
@@ -165,7 +165,7 @@ const AboutItemModal = ({ isOpen, onClose }) => {
             </div>
           </div>
         </div>
-        <div className="w-full bg-accent-200 px-10">
+        <div className="w-full rounded-lg bg-accent-200 px-10">
           <div className="py-5 text-white">
             <p className="font-normal text-gray-100 mb-4">График цены</p>
             <ResponsiveContainer width="100%" height={190}>
@@ -208,7 +208,12 @@ const AboutItemModal = ({ isOpen, onClose }) => {
                   stroke="#8B52FF"
                   strokeWidth={2}
                   dot={false}
-                  activeDot={{ r: 0 }}
+                  activeDot={{
+                    r: 5,
+                    fill: "#8B52FF",
+                    stroke: "#FFFFFF",
+                    strokeWidth: 2
+                  }}
                   isAnimationActive={true}
                   animationDuration={1000}
                 />

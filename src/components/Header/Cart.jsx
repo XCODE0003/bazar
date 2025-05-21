@@ -97,8 +97,9 @@ function CartItem() {
   return (
     <div className="flex flex-col pb-3 border-b border-white/5 gap-3">
       <div className="flex items-center justify-between relative pt-2 z-50 overflow-hidden ">
-        <div className="flex gap-3 items-center">
-          <div className="max-w-[85px] border-field_tested z-40 border-b-2">
+        <div className="flex relative gap-3 items-center ">
+          <div className="absolute top-0 left-0 w-full h-full border-field_tested border-b-[0.35px] max-w-[100px]"></div>
+          <div className="max-w-[80px] z-40 ">
             <img
               src="/assets/images/skins/knife.png"
               alt=""

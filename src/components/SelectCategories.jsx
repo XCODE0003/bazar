@@ -42,7 +42,7 @@ export default function SelectCategories({ options, defaultValue, onChange, clas
         {options.map((option) => (
           <div
             key={option.id || option.code || option.value}
-            className="btn btn-border !py-1.5 flex items-center gap-2"
+            className={` ${option.value == "all" ? "!px-3 !py-5 !justify-center" : "!px-2 !py-1.5 !justify-start"} btn btn-border text-gray-100 flex items-start  gap-2`}
             onClick={() => handleOptionClick(option)}
           >
             {option.icon && (
