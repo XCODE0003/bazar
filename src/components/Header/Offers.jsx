@@ -56,7 +56,7 @@ export default function Offers() {
 
       {(isOpen || isAnimating) && (
         <div
-          className="absolute top-12 z-50 left-1/2 overflow-y-hidden max-h-[480px] -translate-x-1/2 w-full min-w-[400px] bg-accent-300/80 backdrop-blur-lg border border-white/5 rounded-lg p-4 mt-2 shadow-lg"
+          className="absolute top-12  z-[100] left-1/2 overflow-y-hidden max-h-[480px] -translate-x-1/2 w-full min-w-[400px] bg-accent-300/80 backdrop-blur-lg border border-white/5 rounded-lg p-4 mt-2 shadow-lg"
           style={{
             animation: isOpen
               ? "fadeIn 0.2s forwards"

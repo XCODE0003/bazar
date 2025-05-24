@@ -1,4 +1,8 @@
+import InfoWithdrawModal from "../../components/InfoWithdrawModal";
+import { useState } from "react";
+
 export default function RequestPage() {
+    const [isOpen, setIsOpen] = useState(false);
     return (
         <div className="admin_main_dash admin_main_requests">
         <div className="admin_main_deal">
@@ -82,9 +86,9 @@ export default function RequestPage() {
                     <td className="admin_main_deal_tabble_main_text">#00001</td>
                     <td className="admin_main_deal_tabble_main_summa">₽4509</td>
                     <td>
-                      <a
-                        href="#!"
-                        className="admin_main_deal_tabble_main_accept"
+                      <button
+                        className="admin_main_deal_tabble_main_accept !mx-auto   flex items-start justify-start gap-2"
+                        onClick={() => setIsOpen(true)}
                         >Ожидает подтверждения
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
@@ -99,7 +103,7 @@ export default function RequestPage() {
                             stroke-width="1.78628"
                             stroke-linecap="square"
                           /></svg
-                      ></a>
+                      ></button>
                     </td>
                   </tr>
 
@@ -231,11 +235,12 @@ export default function RequestPage() {
                 </button>
               </div>
               <button className="admin_main_deal_paggination_item_text">
-                Назад
+                Вперед
               </button>
             </div>
           </div>
         </div>
+        <InfoWithdrawModal isOpen={isOpen} onClose={() => setIsOpen(false)} />
       </div>
     )
 }

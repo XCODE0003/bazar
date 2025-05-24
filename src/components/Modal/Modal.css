@@ -10,7 +10,15 @@
   justify-content: center;
   z-index: 1000;
   opacity: 0;
-  transition: opacity 0.3s ease;
+  transition: all 0.3s ease-in-out;
+  visibility: hidden;
+}
+
+/* Добавляем базовые стили для контейнера контента */
+.modal-overlay > div {
+  transform: scale(0.9);
+  transition: all 0.3s ease-in-out;
+  opacity: 0;
 }
 
 .modal-content {
@@ -20,8 +28,6 @@
   max-width: 90%;
   max-height: 90vh;
   overflow-y: auto;
-  transform: scale(0.9);
-  transition: transform 0.3s ease;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
 }
 
@@ -58,16 +64,26 @@
 /* Анимации */
 .modal-open {
   opacity: 1;
+  visibility: visible;
+}
+
+.modal-open > div {
+  opacity: 1;
 }
 
 .modal-close {
   opacity: 0;
+  visibility: hidden;
+}
+
+.modal-close > div {
+  opacity: 0;
 }
 
 .modal-content-open {
-  transform: scale(1);
+  transform: scale(1) !important;
 }
 
 .modal-content-close {
-  transform: scale(0.9);
+  transform: scale(0.9) !important;
 }

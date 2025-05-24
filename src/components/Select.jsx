@@ -23,7 +23,7 @@ export default function Select({ options, defaultValue, onChange, className }) {
   };
 
   return (
-    <div className={`flex flex-col flex-shrink-0 gap-1 relative ${className}`}>
+    <div className={`flex flex-col min-w-[200px] flex-shrink-0 gap-1 relative ${className}`}>
       <div
         className="bg-accent-200 w-full rounded-lg py-2.5 px-4 gap-1 flex items-center justify-between cursor-pointer"
         onClick={toggleDropdown}

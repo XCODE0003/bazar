@@ -165,7 +165,7 @@ export default function DealsPage() {
             <button className="admin_main_deal_paggination_button">5</button>
             <button className="admin_main_deal_paggination_button">6</button>
           </div>
-            <button className="admin_main_deal_paggination_item_text">Назад</button>
+            <button className="admin_main_deal_paggination_item_text">Вперед</button>
         </div>
       </div>
     </div>

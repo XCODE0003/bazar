@@ -1,11 +1,18 @@
 import { useState } from "react";
 import Modal from "./Modal/Modal";
 import RareLine from "./Product/rareLine";
-import { LineChart, Line, XAxis, YAxis, ResponsiveContainer, Tooltip, CartesianGrid, Area } from "recharts";
+import {
+  LineChart,
+  Line,
+  XAxis,
+  YAxis,
+  ResponsiveContainer,
+  Tooltip,
+  CartesianGrid,
+  Area,
+} from "recharts";
 
 const AboutItemModal = ({ isOpen, onClose }) => {
-  const [paymentMethod, setPaymentMethod] = useState("card");
-
   const priceData = [
     { name: "Июль", price: 50189 },
     { name: "Август", price: 50800 },
@@ -18,7 +25,33 @@ const AboutItemModal = ({ isOpen, onClose }) => {
   ];
 
   return (
-    <Modal isOpen={isOpen} onClose={onClose} className="!max-w-[1180px] !py-4">
+    <Modal
+      isOpen={isOpen}
+      onClose={onClose}
+      className="!max-w-[1180px] flex-col flex !py-4"
+    >
+      <div className="w-full justify-end pb-4  flex">
+        <svg className="hover:cursor-pointer hover:opacity-80 transition-all duration-300" onClick={onClose} width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+          <g
+            id="SVGRepo_tracerCarrier"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          ></g>
+          <g id="SVGRepo_iconCarrier">
+            {" "}
+            <path
+              opacity="0.5"
+              d="M22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12Z"
+              fill="white"
+            ></path>{" "}
+            <path
+              d="M8.96967 8.96967C9.26256 8.67678 9.73744 8.67678 10.0303 8.96967L12 10.9394L13.9697 8.96969C14.2626 8.6768 14.7374 8.6768 15.0303 8.96969C15.3232 9.26258 15.3232 9.73746 15.0303 10.0304L13.0607 12L15.0303 13.9696C15.3232 14.2625 15.3232 14.7374 15.0303 15.0303C14.7374 15.3232 14.2625 15.3232 13.9696 15.0303L12 13.0607L10.0304 15.0303C9.73746 15.3232 9.26258 15.3232 8.96969 15.0303C8.6768 14.7374 8.6768 14.2626 8.96969 13.9697L10.9394 12L8.96967 10.0303C8.67678 9.73744 8.67678 9.26256 8.96967 8.96967Z"
+              fill="#1C274C"
+            ></path>{" "}
+          </g>
+        </svg>
+      </div>
       <div className="flex flex-col gap-3 ">
         <div className="flex gap-6 ">
           <div className="flex flex-col gap-18 pt-10 w-full">
@@ -122,7 +155,7 @@ const AboutItemModal = ({ isOpen, onClose }) => {
                   </svg>
                 </button>
                 <div className="px-2.5 py-5  border w-full border-gray-100/5 flex justify-between items-center rounded-lg">
-                  <div className="flex gap-1 ">
+                  <div className="flex items-center gap-1 ">
                     <img
                       src="/assets/images/project/test_avatar1.png"
                       className="w-9 h-9 rounded-full"
@@ -130,7 +163,9 @@ const AboutItemModal = ({ isOpen, onClose }) => {
                       srcset=""
                     />
                     <div className="flex flex-col  gap-1">
-                      <p className="text-xs font-semibold leading-none text-white">kinza</p>
+                      <p className="text-xs font-semibold leading-none text-white">
+                        kinza
+                      </p>
                       <p className="font-semibold leading-none text-gray-100 text-[10px]">
                         Рейтинг: <span className="text-white">75%</span>
                       </p>
@@ -194,10 +229,16 @@ const AboutItemModal = ({ isOpen, onClose }) => {
                   tickCount={3}
                   width={65}
                   tick={{ fontSize: 12 }}
-                  tickFormatter={(value) => `₽${value.toLocaleString().split(',')[0]}`}
+                  tickFormatter={(value) =>
+                    `₽${value.toLocaleString().split(",")[0]}`
+                  }
                 />
                 <Tooltip
-                  contentStyle={{ background: "#1E2023", border: "none", borderRadius: "8px" }}
+                  contentStyle={{
+                    background: "#1E2023",
+                    border: "none",
+                    borderRadius: "8px",
+                  }}
                   labelStyle={{ color: "#fff" }}
                   formatter={(value) => [`₽${value.toLocaleString()}`, "Цена"]}
                   cursor={false}
@@ -212,7 +253,7 @@ const AboutItemModal = ({ isOpen, onClose }) => {
                     r: 5,
                     fill: "#8B52FF",
                     stroke: "#FFFFFF",
-                    strokeWidth: 2
+                    strokeWidth: 2,
                   }}
                   isAnimationActive={true}
                   animationDuration={1000}
@@ -229,10 +270,18 @@ const AboutItemModal = ({ isOpen, onClose }) => {
               </LineChart>
             </ResponsiveContainer>
             <div className="flex justify-end gap-3 mt-2">
-              <button className="px-3 py-1 rounded-md text-xs text-gray-100 hover:bg-accent-300">1М</button>
-              <button className="px-3 py-1 rounded-md text-xs text-gray-100 hover:bg-accent-300">3М</button>
-              <button className="px-3 py-1 rounded-md text-xs text-gray-100 hover:bg-accent-300">1Г</button>
-              <button className="px-3 py-1 rounded-md text-xs text-gray-100 bg-accent-300">ВСЕ</button>
+              <button className="px-3 py-1 rounded-md text-xs text-gray-100 hover:bg-accent-300">
+                1М
+              </button>
+              <button className="px-3 py-1 rounded-md text-xs text-gray-100 hover:bg-accent-300">
+                3М
+              </button>
+              <button className="px-3 py-1 rounded-md text-xs text-gray-100 hover:bg-accent-300">
+                1Г
+              </button>
+              <button className="px-3 py-1 rounded-md text-xs text-gray-100 bg-accent-300">
+                ВСЕ
+              </button>
             </div>
           </div>
         </div>

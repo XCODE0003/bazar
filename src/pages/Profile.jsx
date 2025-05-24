@@ -1,13 +1,13 @@
 import UserProduct from "../components/Product/UserProduct";
 import ReviewItem from "../components/ReviewItem";
 import { useState } from "react";
-
+import HistoryModal from "../components/HistoryModal";
 export default function UserPage() {
   const [percent, setPercent] = useState(99);
   const degrees = (percent / 100) * 360;
   const [isChecked, setIsChecked] = useState(false);
   const [activeTab, setActiveTab] = useState("settings");
-
+  const [isOpen, setIsOpen] = useState(false);
   const [tradeLink, setTradeLink] = useState(
     "https://steamcommunity.com/tradeoffer/new/?partner=971441372&token=YTc98LzN"
   );
@@ -371,11 +371,12 @@ export default function UserPage() {
           </div>
           <div className="flex items-center gap-3.5">
             <button className="btn btn-secondary">Инвентарь</button>
-            <button className="btn btn-secondary">История</button>
+            <button className="btn btn-secondary" onClick={() => setIsOpen(true)}>История</button>
           </div>
         </div>
         {activeTab === "settings" ? renderSettings() : renderReviews()}
       </div>
+      <HistoryModal isOpen={isOpen} onClose={() => setIsOpen(false)} />
     </div>
   );
 }

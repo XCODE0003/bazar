@@ -1,7 +1,6 @@
 import Range from "./Range";
 import { useState, useEffect } from "react";
-import Select from "./Select";
-
+import SelectRarity from "./SelectRarity";
 export default function AsideFilter() {
   const rarityOptions = [
     { id: 1, name: "Обычный", value: 0 },
@@ -316,10 +315,8 @@ export default function AsideFilter() {
           </div>
 
           {isRarityOpen && (
-            <Select
-              options={rarityOptions}
-              defaultValue={rarity}
-              onChange={setRarity}
+            <SelectRarity
+
             />
           )}
 

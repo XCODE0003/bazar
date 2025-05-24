@@ -1,26 +1,68 @@
 import { useState } from "react";
 import Select from "../components/Select";
+import RadioSelect from "../components/SelectRadio";
 import ProductAddCart from "../components/Product/ProductAddCart";
+
 const sortOptions = [
   {
     id: 1,
-    name: "По популярности",
     value: "popular",
+    name: "По популярности",
+    icon: null,
   },
   {
     id: 2,
-    name: "По цене",
-    value: "price",
+    value: "price_high",
+    name: "По цене (дорогие)",
+    icon: (
+      <svg
+        width="16"
+        height="16"
+        viewBox="0 0 16 16"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M13 0.75C13 0.335786 12.6642 0 12.25 0C11.8358 0 11.5 0.335786 11.5 0.75V13.3219L10.0529 11.7432C9.77297 11.4379 9.29855 11.4172 8.99321 11.6971C8.68787 11.977 8.66724 12.4515 8.94714 12.7568L11.6971 15.7568C11.8392 15.9118 12.0398 16 12.25 16C12.4602 16 12.6608 15.9118 12.8029 15.7568L15.5529 12.7568C15.8328 12.4515 15.8121 11.977 15.5068 11.6971C15.2015 11.4172 14.727 11.4379 14.4471 11.7432L13 13.3219V0.75ZM0.75 1.5C0.335786 1.5 0 1.83579 0 2.25C0 2.66421 0.335786 3 0.75 3H9.25C9.66421 3 10 2.66421 10 2.25C10 1.83579 9.66421 1.5 9.25 1.5H0.75ZM3 5.25C3 4.83579 3.33579 4.5 3.75 4.5H9.25C9.66421 4.5 10 4.83579 10 5.25C10 5.66421 9.66421 6 9.25 6H3.75C3.33579 6 3 5.66421 3 5.25ZM6.75 7.5C6.33579 7.5 6 7.83579 6 8.25C6 8.66421 6.33579 9 6.75 9H9.25C9.66421 9 10 8.66421 10 8.25C10 7.83579 9.66421 7.5 9.25 7.5H6.75Z"
+          fill="#787E87"
+          fillOpacity="0.6"
+        />
+      </svg>
+    ),
   },
   {
     id: 3,
-    name: "По редкости",
+    value: "price_low",
+    name: "По цене (дешёвые)",
+    icon: (
+      <svg
+        width="16"
+        height="16"
+        viewBox="0 0 16 16"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M3 15.25C3 15.6642 3.33578 16 3.75 16C4.16421 16 4.5 15.6642 4.5 15.25L4.5 2.6781L5.94713 4.25679C6.22703 4.56213 6.70145 4.58276 7.00679 4.30287C7.31213 4.02297 7.33276 3.54855 7.05286 3.24321L4.30286 0.243205C4.16081 0.0882339 3.96023 -1.05255e-06 3.75 -1.07093e-06C3.53977 -1.08931e-06 3.33919 0.0882338 3.19713 0.243205L0.447132 3.2432C0.167237 3.54854 0.187864 4.02297 0.493204 4.30286C0.798543 4.58276 1.27297 4.56213 1.55286 4.25679L3 2.6781L3 15.25ZM15.25 14.5C15.6642 14.5 16 14.1642 16 13.75C16 13.3358 15.6642 13 15.25 13L6.75 13C6.33579 13 6 13.3358 6 13.75C6 14.1642 6.33579 14.5 6.75 14.5L15.25 14.5ZM13 10.75C13 11.1642 12.6642 11.5 12.25 11.5L6.75 11.5C6.33579 11.5 6 11.1642 6 10.75C6 10.3358 6.33579 10 6.75 10L12.25 10C12.6642 10 13 10.3358 13 10.75ZM9.25 8.5C9.66421 8.5 10 8.16421 10 7.75C10 7.33579 9.66421 7 9.25 7L6.75 7C6.33579 7 6 7.33579 6 7.75C6 8.16421 6.33579 8.5 6.75 8.5L9.25 8.5Z"
+          fill="#787E87"
+          fillOpacity="0.6"
+        />
+      </svg>
+    ),
+  },
+  {
+    id: 4,
     value: "rare",
+    name: "По редкости",
+    icon: null,
   },
 ];
+
 export default function MainPage() {
   const [selectedItems, setSelectedItems] = useState([]);
   const [sort, setSort] = useState(sortOptions[0]);
+  const [showSortModal, setShowSortModal] = useState(false);
+
   return (
     <div className="container flex flex-col flex-1 h-full gap-4 mx-auto">
       <div className="flex flex-col gap-[30px] p-[30px] bg-accent-300 rounded-2xl border border-white/5">
@@ -55,15 +97,46 @@ export default function MainPage() {
                 </div>
                 <div className="flex items-center gap-2">
                   <button className="btn btn-primary">Выбрать все</button>
-                  <Select
-                    options={sortOptions}
-                    defaultValue={sort}
-                    onChange={setSort}
-                  />
+
+                  <div className="relative h-full">
+                    <button
+                      className="btn  !bg-accent-200   h-full flex items-center !px-2 min-w-[250px] !justify-between !text-gray-100 gap-2"
+                      onClick={() => setShowSortModal(!showSortModal)}
+                    >
+                      {sort.name}
+                      <svg
+                        width="10"
+                        height="6"
+                        viewBox="0 0 10 6"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M0.182992 0.374643C0.300196 0.257474 0.459139 0.191652 0.624866 0.191652C0.790594 0.191652 0.949536 0.257474 1.06674 0.374643L4.99987 4.30777L8.93299 0.374643C8.99064 0.314949 9.05961 0.267335 9.13586 0.234579C9.21211 0.201824 9.29413 0.184583 9.37711 0.183861C9.4601 0.18314 9.5424 0.198954 9.61921 0.23038C9.69602 0.261805 9.7658 0.308213 9.82449 0.366896C9.88317 0.425579 9.92958 0.495362 9.961 0.572172C9.99243 0.648982 10.0082 0.731281 10.0075 0.814269C10.0068 0.897256 9.98956 0.979268 9.9568 1.05552C9.92405 1.13177 9.87643 1.20074 9.81674 1.25839L5.44174 5.63339C5.32454 5.75056 5.16559 5.81638 4.99987 5.81638C4.83414 5.81638 4.6752 5.75056 4.55799 5.63339L0.182992 1.25839C0.0658222 1.14119 0 0.982246 0 0.816518C0 0.65079 0.0658222 0.491848 0.182992 0.374643Z"
+                          fill="#787E87"
+                        />
+                      </svg>
+                    </button>
+
+                    {showSortModal && (
+                      <div className="absolute top-full right-0 mt-2 z-50 w-80">
+                        <RadioSelect
+                          options={sortOptions}
+                          defaultValue={sort}
+
+                          onChange={(option) => {
+                            setSort(option);
+                            setShowSortModal(false);
+                          }}
+
+                        />
+                      </div>
+                    )}
+                  </div>
                 </div>
               </div>
             </div>
-            <div className="2xl:grid-cols-6 gap-7 grid grid-cols-5">
+            <div className="2xl:grid-cols-6 gap-7 max-h-[815px] overflow-y-auto grid grid-cols-5">
               {Array.from({ length: 100 }).map((_, index) => (
                 <ProductAddCart
                   key={index}
@@ -90,7 +163,7 @@ export default function MainPage() {
               ))}
             </div>
           </div>
-          <div className="px-3.5 py-6 max-w-[440px] max-h-[850px] w-full bg-accent-200 rounded-2xl flex flex-col">
+          <div className="px-3.5 py-6 max-w-[400px] max-h-[850px] w-full bg-accent-200 rounded-2xl flex flex-col">
             <p className="text-2xl font-semibold">Выставить предметы</p>
             <div className="h-full flex justify-center items-center flex-col gap-3.5">
               <div className="text-gray-100 flex justify-center items-center flex-col gap-3.5 ">

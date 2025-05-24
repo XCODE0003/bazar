@@ -7,12 +7,13 @@ export default function ProductAddCart({
   product,
   isInInventory = false,
   setSelectedItem = () => {},
+  classNameBtn = "bg-gradient-to-tr from-primary to-primary/80",
 }) {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpenModal, setIsOpenModal] = useState(false);
   return (
-    <div  className=" rounded-2xl bg-accent-200 flex flex-col gap-2.5 overflow-hidden ">
+    <div  className=" rounded-2xl min-h-[310px] flex-shrink-0 bg-accent-200 flex flex-col gap-2.5 overflow-hidden ">
       <div
-        onClick={() => setIsOpen(true)}
+        onClick={() => setIsOpenModal(true)}
         className={`p-1.5 hover:opacity-80 cursor-pointer transition-all duration-300 py-2.5 bg-white/3 overflow-hidden relative border-b  border-${product.rarity}  flex flex-col items-center justify-center`}
       >
         <div className="flex items-center justify-start w-full">
@@ -22,7 +23,7 @@ export default function ProductAddCart({
           <img src={product.image} alt={product.name} />
         </div>
         <div
-          className={`absolute -bottom-10 left-1/2 blur-3xl -translate-x-1/2 w-38 h-38 bg-${product.rarity} rounded-full`}
+          className={`absolute -bottom-18 left-1/2 -translate-x-1/2 blur-[55px]  w-[132px] h-[132px]  bg-${product.rarity} rounded-full`}
         ></div>
       </div>
       <div className="flex  flex-col gap-0.5 px-2.5">
@@ -47,15 +48,16 @@ export default function ProductAddCart({
         onClick={() => setSelectedItem(product)}
         className={
           "btn justify-center items-center !rounded-t-none flex !py-1.5 hover:opacity-90 z-50 !cursor-pointer overflow-hidden relative group !border-none " +
-          (isInInventory ? "btn-primary" : "btn-primary-light")
+
+          (isInInventory ? "" : "btn-primary-light")
         }
       >
         <div className={`
           absolute inset-0 w-full h-full transition-all duration-300 ease-in-out
+          ${classNameBtn}
           ${isInInventory ? "opacity-100" : "opacity-0 scale-90"}
-          bg-gradient-to-tr from-primary to-primary/80 rounded-md
+          xrounded-md
         `}></div>
-
         <div className="relative z-10 transition-transform duration-300 ease-in-out transform
           group-hover:scale-110 group-active:scale-95">
           <svg
@@ -79,7 +81,7 @@ export default function ProductAddCart({
           </svg>
         </div>
       </button>
-      <AboutItemModal isOpen={isOpen} onClose={() => setIsOpen(false)} />
+      <AboutItemModal isOpen={isOpenModal} onClose={() => setIsOpenModal(false)} />
     </div>
   );
 }

@@ -35,7 +35,7 @@ export default function SelectCategories({ options, defaultValue, onChange, clas
         </span>
       </div>
       <div
-        className={`dropdown-menu absolute top-14 left-0 w-full bg-accent-200 rounded-lg py-2.5 px-1 gap-1 flex flex-col z-50 transition-all duration-300 ease-in-out ${
+        className={`dropdown-menu absolute top-14 left-0 w-full bg-accent-200/80 backdrop-blur-md border border-white/5 rounded-lg py-2.5 px-3 gap-1 flex flex-col z-50 transition-all duration-300 ease-in-out ${
           isOpen ? "opacity-100 transform translate-y-0" : "opacity-0 pointer-events-none transform -translate-y-2"
         }`}
       >

@@ -6,7 +6,7 @@
   --color-accent-400: #272731;
   --color-red-100: #ff4e4e;
   --color-gray-100: #787e87;
-  --color-gray-200: #23232C;
+  --color-gray-200: #23232c;
   --color-green-200: #0ead4f;
   --color-purple-900: #302051;
   --color-factory_new: #1333ff;
@@ -20,13 +20,12 @@
   --breakpoint-xs: 480px;
 }
 .hidden-scrollbar {
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
 }
 .hidden-scrollbar::-webkit-scrollbar {
-  display: none;  /* Chrome, Safari and Opera */
+  display: none; /* Chrome, Safari and Opera */
 }
-
 
 ::-webkit-scrollbar {
   width: 2px;
@@ -288,6 +287,117 @@ input {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-.category-select{
-    @apply flex hover:bg-gray-200 py-3.5 rounded-lg cursor-pointer transition-all duration-300 items-center gap-2 justify-center text-gray-100 text-sm w-full
+.category-select {
+  @apply flex hover:bg-gray-200 py-3.5 rounded-lg cursor-pointer transition-all duration-300 items-center gap-2 justify-center text-gray-100 text-sm w-full;
+}
+
+.bg_test_popup {
+  background-image: url("/assets/images/project/popup_bg.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.btn-success {
+  border-radius: 12px;
+  background: rgba(46, 206, 112, 0.1);
+  color: #2ece70;
+}
+.btn-danger {
+  border-radius: 12px;
+  background: rgba(255, 75, 79, 0.1);
+  color: #ff4b4f;
+}
+.loader {
+  width: 24px;
+  height: 24px;
+  border: 2px solid #787e87;
+  border-bottom-color: transparent;
+  border-radius: 50%;
+  display: inline-block;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+.action-hover {
+  position: relative;
+}
+
+.action-hover .action-hover-hidden {
+  opacity: 1;
+  transform: translateY(0);
+  transition: all 0.3s ease-in-out;
+}
+
+.action-hover:hover .action-hover-hidden {
+  opacity: 0;
+  transform: translateY(-20px);
+}
+
+.action-hover .action-hover-show {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  opacity: 0;
+  transform: translateY(100%);
+  transition: all 0.3s ease-in-out;
+}
+
+.action-hover:hover .action-hover-show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Toast animations */
+@keyframes toast-enter {
+  0% {
+    transform: translate3d(0, -100%, 0) scale(0.9);
+    opacity: 0;
+  }
+  50% {
+    transform: translate3d(0, -20%, 0) scale(1.02);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes toast-exit {
+  0% {
+    transform: translate3d(0, 0, 0) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translate3d(0, -100%, 0) scale(0.95);
+    opacity: 0;
+  }
+}
+
+/* Дополнительная анимация для иконок */
+@keyframes toast-icon-bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-4px);
+  }
+  60% {
+    transform: translateY(-2px);
+  }
+}
+
+/* Стили для toast контейнера */
+.toast-container {
+  backdrop-filter: blur(20px);
 }

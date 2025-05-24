@@ -27,6 +27,7 @@ const BalanceModal = ({ isOpen, onClose }) => {
                 <input
                   type="text"
                   placeholder="0"
+                  className="w-full"
                   value={amount}
                   onChange={(e) => setAmount(e.target.value)}
                 />

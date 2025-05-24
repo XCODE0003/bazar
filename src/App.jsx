@@ -12,8 +12,11 @@ import DealsPage from "./pages/Admin/Deal";
 import UsersPage from "./pages/Admin/Users";
 import AdminLayout from "./layout/AdminLayout";
 import RequestPage from "./pages/Admin/Request";
+import PopupPage from "./pages/Admin/CreatePopup";
+import SwapPage from "./pages/Swap";
 import "./App.css";
 import { MenuProvider } from './context/MenuContext';
+import CustomToaster from './components/Toast/CustomToaster'
 
 function App() {
   return (
@@ -24,6 +27,7 @@ function App() {
             <Route index element={<MainPage />} />
             <Route path="/market" element={<MarketPage />} />
             <Route path="/exchange" element={<ExchangePage />} />
+            <Route path="/swap" element={<SwapPage />} />
             <Route path="/user/:id" element={<UserPage />} />
             <Route path="/profile" element={<ProfilePage />} />
             <Route path="/deal/:id" element={<DealPage />} />
@@ -36,9 +40,11 @@ function App() {
             <Route path="deals" element={<DealsPage />} />
             <Route path="users" element={<UsersPage />} />
             <Route path="requests" element={<RequestPage />} />
+            <Route path="popup" element={<PopupPage />} />
           </Route>
         </Routes>
       </BrowserRouter>
+      <CustomToaster />
     </MenuProvider>
   );
 }

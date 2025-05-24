@@ -196,7 +196,7 @@ export default function UsersPage() {
               <button className="admin_main_deal_paggination_button">6</button>
             </div>
             <button className="admin_main_deal_paggination_item_text">
-              Назад
+              Вперед
             </button>
           </div>
         </div>

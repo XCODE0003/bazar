@@ -1,11 +1,10 @@
 import { Link, useLocation } from "react-router-dom";
 
-
 const pageTitles = {
   "/admin": "Главная",
   "/admin/users": "Пользователи",
   "/admin/deals": "Сделки",
-  "/admin/requests": "Заявки"
+  "/admin/requests": "Заявки",
 };
 
 export default function AsideAdmin() {
@@ -13,18 +12,19 @@ export default function AsideAdmin() {
   const currentPath = location.pathname;
 
   return (
-    <div className="admin_main_navigations">
+    <div className="admin_main_navigations h-full">
       <div className="admin_main_navigations_content">
-
         <ul className="admin_main_navigations_navs">
           <li
             className={
               "admin_main_navigations_nav" +
-              (currentPath === "/admin" ? " admin_main_navigations_nav_active" : "")
+              (currentPath === "/admin"
+                ? " admin_main_navigations_nav_active"
+                : "")
             }
           >
-            <Link to="/admin"
-              ><svg
+            <Link to="/admin">
+              <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="26"
                 height="30"
@@ -36,16 +36,19 @@ export default function AsideAdmin() {
                   fill="white"
                 />
               </svg>
-              <p>Главная</p></Link>
+              <p>Главная</p>
+            </Link>
           </li>
           <li
             className={
               "admin_main_navigations_nav" +
-              (currentPath === "/admin/users" ? " admin_main_navigations_nav_active" : "")
+              (currentPath === "/admin/users"
+                ? " admin_main_navigations_nav_active"
+                : "")
             }
           >
-            <Link to="/admin/users"
-              ><svg
+            <Link to="/admin/users">
+              <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="34"
                 height="34"
@@ -57,16 +60,19 @@ export default function AsideAdmin() {
                   fill="white"
                 />
               </svg>
-              <p>Пользователи</p></Link>
+              <p>Пользователи</p>
+            </Link>
           </li>
           <li
             className={
               "admin_main_navigations_nav" +
-              (currentPath === "/admin/deals" ? " admin_main_navigations_nav_active" : "")
+              (currentPath === "/admin/deals"
+                ? " admin_main_navigations_nav_active"
+                : "")
             }
           >
-            <Link to="/admin/deals"
-              ><svg
+            <Link to="/admin/deals">
+              <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="29"
                 height="27"
@@ -78,17 +84,19 @@ export default function AsideAdmin() {
                   fill="white"
                 />
               </svg>
-              <p>Сделки</p></Link
-            >
+              <p>Сделки</p>
+            </Link>
           </li>
           <li
             className={
               "admin_main_navigations_nav" +
-              (currentPath === "/admin/requests" ? " admin_main_navigations_nav_active" : "")
+              (currentPath === "/admin/requests"
+                ? " admin_main_navigations_nav_active"
+                : "")
             }
           >
-            <Link to="/admin/requests"
-              ><svg
+            <Link to="/admin/requests">
+              <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="32"
                 height="32"
@@ -100,12 +108,19 @@ export default function AsideAdmin() {
                   fill="white"
                 />
               </svg>
-              <p>Заявки</p></Link
-            >
+              <p>Заявки</p>
+            </Link>
           </li>
-          <li className="admin_main_navigations_nav">
-            <a href="#!"
-              ><svg
+          <li
+            className={
+              "admin_main_navigations_nav" +
+              (currentPath === "/admin/popup"
+                ? " admin_main_navigations_nav_active"
+                : "")
+            }
+          >
+            <Link to="/admin/popup">
+              <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="30"
                 height="30"
@@ -117,8 +132,8 @@ export default function AsideAdmin() {
                   fill="white"
                 />
               </svg>
-              <p></p
-            ></a>
+              <p></p>
+            </Link>
           </li>
         </ul>
 
