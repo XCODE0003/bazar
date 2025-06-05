@@ -50,7 +50,7 @@ export default function Offers() {
           />
         </svg>
         <div className="h-5 w-5 rounded-full flex items-center justify-center bg-primary absolute -top-3 right-1.5 text-sm">
-1
+          1
         </div>
       </button>
 
@@ -126,7 +126,8 @@ function OffersItem() {
       <div className="h-[1px] w-full bg-[#F0F0F0]/5"></div>
       <div className="flex items-center justify-center gap-5">
         <ExchangeItems items={items} />
-        <svg className="flex-shrink-0"
+        <svg
+          className="flex-shrink-0"
           width="16"
           height="20"
           viewBox="0 0 16 20"
@@ -141,12 +142,8 @@ function OffersItem() {
         <ExchangeItems items={items} />
       </div>
       <div className="flex items-center justify-between text-gray-100">
-        <p className="font-medium">
-          193 180 ₽~
-        </p>
-        <p className="font-medium">
-        ~193 180 ₽
-        </p>
+        <p className="font-medium">193 180 ₽~</p>
+        <p className="font-medium">~193 180 ₽</p>
       </div>
     </div>
   );
@@ -172,6 +169,58 @@ function ExchangeItems({ items }) {
           {items.length > 9 ? "9+" : items.length}
         </div>
       )}
+    </div>
+  );
+}
+
+function NoOffers() {
+  return (
+    <div className="flex flex-col gap-5 items-center justify-center">
+      <svg
+        width="184"
+        height="193"
+        viewBox="0 0 184 193"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <rect
+          x="0.5"
+          y="0.5"
+          width="183"
+          height="192"
+          rx="28.5"
+          stroke="white"
+          stroke-opacity="0.05"
+        />
+        <circle
+          cx="80.1546"
+          cy="76.9209"
+          r="51.415"
+          transform="rotate(62.8474 80.1546 76.9209)"
+          stroke="white"
+          stroke-opacity="0.2"
+        />
+        <circle
+          cx="103.846"
+          cy="123.114"
+          r="51.415"
+          transform="rotate(62.8474 103.846 123.114)"
+          stroke="white"
+          stroke-opacity="0.2"
+        />
+      </svg>
+
+      <div className="flex flex-col gap-2.5">
+        <p className="text-lg font-medium text-gray-100">
+          В данный момент офферов нет
+        </p>
+        <p className="text-gray-100">
+          Попробуй вставить
+          <Link to="/" className="text-primary">
+            трейд-ссылку
+          </Link>
+        </p>
+      </div>
     </div>
   );
 }

@@ -35,7 +35,7 @@ export default function UserPage() {
           Профиль Steam
         </button>
       </div>
-      <div className="flex w-full gap-20">
+      <div className="flex w-full gap-10">
         <div className="flex flex-col gap-2.5 w-full">
           <div className="bg-accent-300 w-fit grid grid-cols-2  gap-1 rounded-lg overflow-hidden">
             <div className="tab-item">
@@ -69,7 +69,7 @@ export default function UserPage() {
               Продажи
             </div>
           </div>
-          <div className="grid grid-cols-5 gap-1">
+          <div className="grid grid-cols-5 gap-2">
             {Array.from({ length: 12 }).map((_, index) => (
               <UserProduct
                 key={index}

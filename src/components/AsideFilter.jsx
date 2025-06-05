@@ -11,6 +11,7 @@ export default function AsideFilter() {
   const [minPrice, setMinPrice] = useState(1000);
   const [maxPrice, setMaxPrice] = useState(5000);
   const [rangePrice, setRangePrice] = useState({ min: 1000, max: 5000 });
+  const [maxMinPrice, setMaxMinPrice] = useState([0, 10000]);
   const [minCondition, setMinCondition] = useState(0);
   const [maxCondition, setMaxCondition] = useState(1);
   const [rangeCondition, setRangeCondition] = useState({ min: 0, max: 1 });
@@ -47,7 +48,7 @@ export default function AsideFilter() {
 
   const handleMinInputChange = (e) => {
     const value = parseInt(e.target.value) || 0;
-    if (value <= maxPrice) {
+    if (value <= maxMinPrice[1] && value <= maxPrice) {
       setMinPrice(value);
       setRangePrice((prev) => ({ ...prev, min: value }));
     }
@@ -55,7 +56,8 @@ export default function AsideFilter() {
 
   const handleMaxInputChange = (e) => {
     const value = parseInt(e.target.value) || 0;
-    if (value >= minPrice) {
+    console.log(value);
+    if (value >= minPrice && value <= maxMinPrice[1]) {
       setMaxPrice(value);
       setRangePrice((prev) => ({ ...prev, max: value }));
     }

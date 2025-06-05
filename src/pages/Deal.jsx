@@ -83,18 +83,36 @@ function DealStatus({ status, onReceiveOffer, onNotReceiveOffer }) {
             onClick={onReceiveOffer}
             className="btn btn-primary !py-2 !px-4  !text-sm rounded-lg flex items-center justify-center gap-2"
           >
-            <svg width="14" height="15" viewBox="0 0 14 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M0 7.5C0 3.63401 3.13401 0.5 7 0.5C10.866 0.5 14 3.63401 14 7.5C14 11.366 10.866 14.5 7 14.5C3.13401 14.5 0 11.366 0 7.5ZM7 2.25C4.1005 2.25 1.75 4.6005 1.75 7.5C1.75 10.3995 4.1005 12.75 7 12.75C9.89949 12.75 12.25 10.3995 12.25 7.5C12.25 4.6005 9.89949 2.25 7 2.25Z" fill="#F0F0F0"/>
-<g clip-path="url(#clip0_0_2925)">
-<path d="M9.42285 5.12109C9.59333 5.00822 9.82541 5.02658 9.97559 5.17676C10.1257 5.32694 10.1441 5.55903 10.0312 5.72949L9.97559 5.79785L6.30078 9.47266C6.15072 9.62272 5.91849 9.64188 5.74805 9.5293L5.67969 9.47266L4.17578 7.96973C4.00435 7.7983 4.00445 7.52012 4.17578 7.34863C4.34726 7.17716 4.6254 7.17716 4.79688 7.34863L5.98926 8.54102L9.35449 5.17676L9.42285 5.12109Z" fill="#F0F0F0" stroke="#F0F0F0" stroke-width="0.21"/>
-</g>
-<defs>
-<clipPath id="clip0_0_2925">
-<rect width="8.01818" height="7.35" fill="white" transform="translate(3.15039 3.65039)"/>
-</clipPath>
-</defs>
-</svg>
-
+            <svg
+              width="14"
+              height="15"
+              viewBox="0 0 14 15"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M0 7.5C0 3.63401 3.13401 0.5 7 0.5C10.866 0.5 14 3.63401 14 7.5C14 11.366 10.866 14.5 7 14.5C3.13401 14.5 0 11.366 0 7.5ZM7 2.25C4.1005 2.25 1.75 4.6005 1.75 7.5C1.75 10.3995 4.1005 12.75 7 12.75C9.89949 12.75 12.25 10.3995 12.25 7.5C12.25 4.6005 9.89949 2.25 7 2.25Z"
+                fill="#F0F0F0"
+              />
+              <g clip-path="url(#clip0_0_2925)">
+                <path
+                  d="M9.42285 5.12109C9.59333 5.00822 9.82541 5.02658 9.97559 5.17676C10.1257 5.32694 10.1441 5.55903 10.0312 5.72949L9.97559 5.79785L6.30078 9.47266C6.15072 9.62272 5.91849 9.64188 5.74805 9.5293L5.67969 9.47266L4.17578 7.96973C4.00435 7.7983 4.00445 7.52012 4.17578 7.34863C4.34726 7.17716 4.6254 7.17716 4.79688 7.34863L5.98926 8.54102L9.35449 5.17676L9.42285 5.12109Z"
+                  fill="#F0F0F0"
+                  stroke="#F0F0F0"
+                  stroke-width="0.21"
+                />
+              </g>
+              <defs>
+                <clipPath id="clip0_0_2925">
+                  <rect
+                    width="8.01818"
+                    height="7.35"
+                    fill="white"
+                    transform="translate(3.15039 3.65039)"
+                  />
+                </clipPath>
+              </defs>
+            </svg>
             Я получил Трейд-оффер
           </button>
         </div>
@@ -228,9 +246,41 @@ export default function DealPage() {
         <div className="flex w-full gap-4">
           <div className="rounded-lg bg-accent-300 max-w-[300px] flex flex-col gap-2.5 overflow-hidden ">
             <div
-              className={`p-1.5 py-2.5 bg-white/5 overflow-hidden relative border-b  border-field_tested  flex flex-col items-center justify-center`}
+              className={`p-1.5 py-2.5 bg-white/5  overflow-hidden relative border-b  border-field_tested  flex flex-col items-center justify-center`}
             >
-              <div className="flex items-center z-30 justify-center">
+              <div className="absolute w-full top-1/2 left-1/2 z-50 -translate-x-1/2 -translate-y-1/2">
+                <div className="flex justify-between px-3 items-center">
+                  <div className="cursor-pointer hover:bg-white/10 transition-all duration-300 h-6 w-6 rounded-sm flex justify-center items-center bg-white/5">
+                    <svg
+                      width="5"
+                      height="10"
+                      viewBox="0 0 5 10"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M4.83164 8.95572C4.93503 8.85231 4.99311 8.71207 4.99311 8.56583C4.99311 8.4196 4.93503 8.27936 4.83164 8.17595L1.36124 4.70554L4.83164 1.23514C4.88431 1.18427 4.92633 1.12341 4.95523 1.05613C4.98413 0.988851 4.99934 0.916487 4.99998 0.843263C5.00062 0.770039 4.98666 0.697422 4.95893 0.629648C4.93121 0.561874 4.89026 0.500301 4.83848 0.448523C4.7867 0.396744 4.72513 0.355795 4.65735 0.328066C4.58958 0.300338 4.51696 0.286385 4.44374 0.287021C4.37051 0.287658 4.29815 0.302871 4.23087 0.331773C4.16359 0.360675 4.10273 0.402686 4.05186 0.455358L0.191569 4.31565C0.0881843 4.41907 0.0301065 4.55931 0.0301065 4.70554C0.0301065 4.85177 0.0881843 4.99201 0.191569 5.09543L4.05186 8.95572C4.15528 9.05911 4.29552 9.11719 4.44175 9.11719C4.58798 9.11719 4.72823 9.05911 4.83164 8.95572Z"
+                        fill="#F0F0F0"
+                      />
+                    </svg>
+                  </div>
+                  <div className="cursor-pointer hover:bg-white/10 transition-all duration-300 h-6 w-6 rounded-sm flex justify-center items-center bg-white/5">
+                    <svg
+                      width="5"
+                      height="10"
+                      viewBox="0 0 5 10"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M0.168358 8.95572C0.0649728 8.85231 0.00689438 8.71207 0.00689438 8.56583C0.00689438 8.4196 0.0649728 8.27936 0.168358 8.17595L3.63876 4.70554L0.168358 1.23514C0.115687 1.18427 0.073674 1.12341 0.044772 1.05613C0.01587 0.988851 0.000657215 0.916487 2.09202e-05 0.843263C-0.000615375 0.770039 0.0133379 0.697422 0.0410663 0.629648C0.0687948 0.561874 0.109743 0.500301 0.161522 0.448523C0.213301 0.396744 0.274874 0.355795 0.342648 0.328066C0.410421 0.300338 0.483039 0.286385 0.556262 0.287021C0.629486 0.287658 0.70185 0.302871 0.769132 0.331773C0.836414 0.360675 0.897265 0.402686 0.948137 0.455358L4.80843 4.31565C4.91182 4.41907 4.96989 4.55931 4.96989 4.70554C4.96989 4.85177 4.91182 4.99201 4.80843 5.09543L0.948137 8.95572C0.844721 9.05911 0.704477 9.11719 0.558247 9.11719C0.412017 9.11719 0.271774 9.05911 0.168358 8.95572Z"
+                        fill="#F0F0F0"
+                      />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+              <div className="flex items-center z-30  justify-center">
                 <img src="/assets/images/skins/knife.png" alt="knife" />
               </div>
               <div

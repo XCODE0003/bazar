@@ -8,6 +8,7 @@ import Cart from "./Header/Cart";
 import Notify from "./Header/Notify";
 import UserMenu from "./Header/UserMenu";
 import Offers from "./Header/Offers";
+import LoginModal from "./LoginModal";
 export default function Header() {
   const { isOpen, openModal, closeModal } = useModal();
 
@@ -51,7 +52,7 @@ export default function Header() {
         <Notify />
         <UserMenu />
       </div>
-
+      <LoginModal isOpen={false} onClose={closeModal} />
       <BalanceModal isOpen={isOpen} onClose={closeModal} />
       <AboutItemModal isOpen={false} onClose={closeModal} />
     </header>

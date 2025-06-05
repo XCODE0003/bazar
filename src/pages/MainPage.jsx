@@ -3,7 +3,7 @@ import Select from "../components/Select";
 import RadioSelect from "../components/SelectRadio";
 import AsideFilter from "../components/AsideFilter";
 import ProductAddCart from "../components/Product/ProductAddCart";
-import { showToast } from '../utils/toast';
+import { showToast } from "../utils/toast";
 const sortOptions = [
   {
     id: 1,
@@ -72,7 +72,7 @@ export default function MainPage() {
       rarity: "factory_new",
       phase: 0.05721636621,
       condition: 50,
-    }))
+    })),
   ]);
 
   const deleteItem = (id) => {
@@ -144,7 +144,6 @@ export default function MainPage() {
             </p>
             <div className="flex gap-3">
               <div className="flex gap-2">
-
                 <button className="btn btn-secondary">Снять все</button>
                 <button className="btn btn-secondary !px-2">
                   <svg
@@ -212,6 +211,62 @@ export default function MainPage() {
           </div>
         </div>
         <AsideFilter />
+      </div>
+    </div>
+  );
+}
+
+function NoTradeLink() {
+  return (
+    <div className="flex flex-col gap-5 items-center justify-center">
+      <svg
+        width="354"
+        height="321"
+        viewBox="0 0 354 321"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <rect
+          x="0.976562"
+          y="0.5"
+          width="352"
+          height="320"
+          rx="11.5"
+          stroke="white"
+          stroke-opacity="0.05"
+        />
+        <rect
+          x="60.5161"
+          y="61.6645"
+          width="124.939"
+          height="197.671"
+          rx="4.29495"
+          stroke="white"
+          stroke-opacity="0.2"
+          stroke-width="0.44621"
+        />
+        <rect
+          x="168.498"
+          y="61.6645"
+          width="124.939"
+          height="197.671"
+          rx="4.29495"
+          stroke="white"
+          stroke-opacity="0.2"
+          stroke-width="0.44621"
+        />
+      </svg>
+
+      <div className="flex flex-col gap-2.5">
+        <p className="text-[28px] font-semibold text-white">
+          Эх.. Пока что у тебя нет предметов
+        </p>
+        <p className="text-gray-100">
+          Вы можете выставить свои предметы в
+          <Link to="/" className="text-primary">
+            Инвентаре
+          </Link>
+        </p>
       </div>
     </div>
   );

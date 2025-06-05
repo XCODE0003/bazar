@@ -67,8 +67,10 @@ export default function MainPage() {
     <div className="container flex flex-col flex-1 h-full gap-4 mx-auto">
       <div className="flex flex-col gap-[30px] p-[30px] bg-accent-300 rounded-2xl border border-white/5">
         <div className="flex items-center justify-between">
-          <h1 className="text-2xl font-semibold">Ваш инвентарь</h1>
-          <p className="text-primary">55 предметов всего</p>
+          <div className="flex flex-col gap-1.5">
+          <h1 className="text-2xl font-semibold">Выбор предметов</h1>
+          <p className="text-lg text-gray-100">Пожалуйста, выберите свои предметы, которые желаете обменять с Бабайка</p>
+          </div>
         </div>
         <div className="flex w-full gap-8">
           <div className="flex flex-col w-full gap-4">
@@ -161,10 +163,10 @@ export default function MainPage() {
               ))}
             </div>
           </div>
-          <div className="px-3.5 py-6 max-w-[440px] max-h-[850px] w-full bg-accent-200 rounded-2xl flex flex-col">
+          <div className="px-3.5 py-6 max-w-[400px] max-h-[850px] w-full bg-accent-200 rounded-2xl flex flex-col">
             <div className="flex items-center justify-between">
               <p className="text-2xl font-semibold">
-                Выставить предметы <span className="text-gray-100 ">(10)</span>
+              Вы предлагаете <span className="text-gray-100 ">(10)</span>
               </p>
               <div className="cursor-pointer hover:scale-95 transition-all duration-300">
                 <svg
@@ -205,6 +207,7 @@ export default function MainPage() {
                   </p>
                 </div>
                 <svg
+                className="mr-10"
                   width="21"
                   height="28"
                   viewBox="0 0 21 28"
@@ -224,7 +227,7 @@ export default function MainPage() {
                   </p>
                 </div>
               </div>
-              <div className="w-full px-3">
+              <div className="w-full">
                 <button className="btn !py-5 gap-3 btn-primary-light w-full ">
                   Далее
                   <svg

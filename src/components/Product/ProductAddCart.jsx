@@ -11,7 +11,7 @@ export default function ProductAddCart({
 }) {
   const [isOpenModal, setIsOpenModal] = useState(false);
   return (
-    <div  className=" rounded-2xl min-h-[310px] flex-shrink-0 bg-accent-200 flex flex-col gap-2.5 overflow-hidden ">
+    <div className=" rounded-2xl min-h-[310px]  flex-shrink-0 bg-accent-200 flex flex-col gap-2.5 overflow-hidden group">
       <div
         onClick={() => setIsOpenModal(true)}
         className={`p-1.5 hover:opacity-80 cursor-pointer transition-all duration-300 py-2.5 bg-white/3 overflow-hidden relative border-b  border-${product.rarity}  flex flex-col items-center justify-center`}
@@ -26,7 +26,7 @@ export default function ProductAddCart({
           className={`absolute -bottom-18 left-1/2 -translate-x-1/2 blur-[55px]  w-[132px] h-[132px]  bg-${product.rarity} rounded-full`}
         ></div>
       </div>
-      <div className="flex  flex-col gap-0.5 px-2.5">
+      <div className="flex  flex-col gap-0.5 px-2.5 ">
         <div className="flex items-start ">
           <div className="flex flex-col w-fit  ">
             <div className="flex items-center gap-1">
@@ -47,8 +47,7 @@ export default function ProductAddCart({
       <button
         onClick={() => setSelectedItem(product)}
         className={
-          "btn justify-center items-center !rounded-t-none flex !py-1.5 hover:opacity-90 z-50 !cursor-pointer overflow-hidden relative group !border-none " +
-
+          "btn justify-center items-center !rounded-t-none flex !py-1.5 hover:opacity-90 z-50 !cursor-pointer overflow-hidden relative group !border-none mt-auto " +
           (isInInventory ? "" : "btn-primary-light")
         }
       >

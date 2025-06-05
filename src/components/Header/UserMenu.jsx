@@ -28,7 +28,7 @@ export default function UserMenu() {
   };
 
   return (
-    <div className="relative flex flex-col gap-2">
+    <div className="relative z-[100] flex flex-col gap-2">
       <div
         onClick={toggleUserMenu}
         className="flex items-center hover:opacity-80 flex-shrink-0 cursor-pointer transition-all duration-300 gap-2 rounded-full px-2 py-1 bg-accent-200/60 text-sm"
