@@ -48,7 +48,7 @@ export const showToast = {
   },
 
   itemRemoved: (itemName) => {
-    return toast.error(`${itemName} удалён из корзины`, {
+    return toast.error(`${itemName} удалён из витрины`, {
       icon: '🗑️',
       duration: 2500,
     });

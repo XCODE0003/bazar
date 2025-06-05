@@ -18,8 +18,23 @@ export default function DualRangeSlider({
 
   useEffect(() => {
     if (rangeRef.current) {
-      const minPercent = ((minValue - min) / range) * 100;
-      const maxPercent = ((maxValue - min) / range) * 100;
+      let minPercent = ((minValue - min) / range) * 100;
+      let maxPercent = ((maxValue - min) / range) * 100;
+      if( maxPercent < 50 ) {
+        maxPercent = maxPercent + 3;
+      } else if( maxPercent > 50 && maxPercent < 100 ) {
+        maxPercent = maxPercent + 2;
+      } else {
+        maxPercent = maxPercent;
+      }
+
+      if( minPercent > 50 ) {
+        minPercent = minPercent - 3;
+      } else if( minPercent > 50 && minPercent < 100 ) {
+        minPercent = minPercent - 2;
+      } else {
+        minPercent = minPercent;
+      }
 
       rangeRef.current.style.left = `${minPercent}%`;
       rangeRef.current.style.width = `${maxPercent - minPercent}%`;
@@ -54,7 +69,7 @@ export default function DualRangeSlider({
         </div>
         <div
           ref={rangeRef}
-          className={`absolute h-full  rounded-[4px] ${rangeColor ? "bg-primary" : 'bg-transparent'}`}
+          className={`absolute h-full rounded-[4px] ${rangeColor ? "bg-primary" : 'bg-transparent'}`}
         ></div>
       </div>
 

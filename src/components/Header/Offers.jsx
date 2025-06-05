@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { useMenuContext } from "../../context/MenuContext";
+import { Link } from "react-router-dom";
 
 export default function Offers() {
   const [isAnimating, setIsAnimating] = useState(false);
@@ -95,7 +96,7 @@ function OffersItem() {
     { image: "/assets/images/skins/knife.png" },
   ];
   return (
-    <div className="flex flex-col gap-3.5 p-4 bg-accent-200/60 rounded-lg">
+    <Link to="/deal/1" className="flex flex-col gap-3.5 p-4 bg-accent-200/60 rounded-lg">
       <div className="flex gap-3 items-center">
         <img
           className="w-10 h-10 rounded-full"
@@ -145,7 +146,7 @@ function OffersItem() {
         <p className="font-medium">193 180 ₽~</p>
         <p className="font-medium">~193 180 ₽</p>
       </div>
-    </div>
+    </Link>
   );
 }
 

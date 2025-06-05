@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useMenuContext } from "../../context/MenuContext";
-
+import { Link } from "react-router-dom";
 export default function UserMenu() {
   const [isAnimating, setIsAnimating] = useState(false);
   const { isMenuOpen, openSpecificMenu } = useMenuContext();
@@ -64,7 +64,7 @@ export default function UserMenu() {
         >
           <div className="flex flex-col text-sm w-full gap-4">
             <div className="flex flex-col gap-4">
-              <div className="account-item">
+              <Link to="/profile" className="account-item">
                 <svg
                   width="14"
                   height="18"
@@ -78,7 +78,7 @@ export default function UserMenu() {
                   />
                 </svg>
                 Профиль
-              </div>
+              </Link>
               <div className="h-[1px] w-full bg-white/5"></div>
             </div>
             <div className="flex flex-col gap-4">
@@ -100,7 +100,7 @@ export default function UserMenu() {
               <div className="h-[1px] w-full bg-white/5"></div>
             </div>
             <div className="flex flex-col gap-4">
-              <div className="account-item">
+              <Link to="/market" className="account-item">
                 <svg
                   width="16"
                   height="12"
@@ -114,8 +114,8 @@ export default function UserMenu() {
                   />
                 </svg>
                 Офферы
-              </div>
-              <div className="account-item">
+              </Link>
+              <Link to="/market" className="account-item">
                 <svg
                   width="19"
                   height="16"
@@ -129,8 +129,8 @@ export default function UserMenu() {
                   />
                 </svg>
                 Витрина
-              </div>
-              <div className="account-item">
+              </Link>
+              <Link to="/inventory" className="account-item">
                 <svg
                   width="16"
                   height="20"
@@ -144,7 +144,7 @@ export default function UserMenu() {
                   />
                 </svg>
                 Инвентарь
-              </div>
+              </Link>
               <div className="h-[1px] w-full bg-white/5"></div>
             </div>
             <div className="flex flex-col gap-4">

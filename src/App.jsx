@@ -33,7 +33,6 @@ function App() {
             <Route path="/deal/:id" element={<DealPage />} />
             <Route path="/inventory" element={<InventoryPage />} />
 
-            {/* <Route path="about" element={<AboutPage />} /> */}
           </Route>
           <Route path="/admin" element={<AdminLayout />}>
             <Route index element={<AdminPage />} />

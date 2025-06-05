@@ -6,7 +6,7 @@ const HistoryModal = ({ isOpen, onClose }) => {
     <Modal
       isOpen={isOpen}
       onClose={onClose}
-      className="!bg-accent-200/50  min-h-[900px] !max-w-[600px] !backdrop-blur-3xl"
+      className="!bg-accent-200/50  min-h-[750px] !max-w-[600px] !backdrop-blur-3xl"
     >
       <div className="flex flex-col h-full items-start py-6 px-6 justify-center gap-8">
         <p className="text-xl text-white font-semibold">История</p>

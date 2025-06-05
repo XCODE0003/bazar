@@ -2,6 +2,7 @@ import UserProduct from "../components/Product/UserProduct";
 import ReviewItem from "../components/ReviewItem";
 import { useState } from "react";
 import HistoryModal from "../components/HistoryModal";
+import { Link } from "react-router-dom";
 export default function UserPage() {
   const [percent, setPercent] = useState(99);
   const degrees = (percent / 100) * 360;
@@ -18,7 +19,7 @@ export default function UserPage() {
 
   function renderSettings() {
     return (
-      <div className="grid grid-cols-2 gap-4">
+      <div className="grid grid-cols-2 gap-4 ">
         <div className="flex flex-col max-w-[460px] w-full gap-8 ">
           <div className="flex flex-col gap-2.5">
             <p className="text-lg font-semibold">Steam Трейд Ссылка</p>
@@ -370,7 +371,7 @@ export default function UserPage() {
             </div>
           </div>
           <div className="flex items-center gap-3.5">
-            <button className="btn btn-secondary">Инвентарь</button>
+            <Link to="/inventory" className="btn btn-secondary">Инвентарь</Link>
             <button className="btn btn-secondary" onClick={() => setIsOpen(true)}>История</button>
           </div>
         </div>

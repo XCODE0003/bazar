@@ -198,7 +198,8 @@ input {
   pointer-events: auto;
   background-image: url("data:image/svg+xml,%3Csvg width='9' height='6' viewBox='0 0 9 6' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M3.74357 0.921859C4.14337 0.442108 4.88022 0.442114 5.28001 0.921871L8.14492 4.35982C8.68769 5.01115 8.22453 6 7.3767 6H1.64678C0.79894 6 0.335785 5.01114 0.878565 4.35981L3.74357 0.921859Z' fill='white'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
-  background-position: left;
+  background-position: center;
+  transform: translateX(-1px);
   z-index: 5;
 }
 
@@ -211,7 +212,8 @@ input {
   pointer-events: auto;
   background-image: url("data:image/svg+xml,%3Csvg width='9' height='6' viewBox='0 0 9 6' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M3.74357 0.921859C4.14337 0.442108 4.88022 0.442114 5.28001 0.921871L8.14492 4.35982C8.68769 5.01115 8.22453 6 7.3767 6H1.64678C0.79894 6 0.335785 5.01114 0.878565 4.35981L3.74357 0.921859Z' fill='white'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
-  background-position: left;
+  background-position: center;
+  transform: translateX(-1px);
   z-index: 5;
 }
 
@@ -225,20 +227,22 @@ input {
   pointer-events: auto;
   background-image: url("data:image/svg+xml,%3Csvg width='9' height='6' viewBox='0 0 9 6' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5.27987 5.07814C4.88007 5.55789 4.14322 5.55789 3.74343 5.07813L0.878514 1.64018C0.335749 0.988852 0.798905 0 1.64674 0L7.37666 0C8.2245 0 8.68765 0.988864 8.14487 1.64019L5.27987 5.07814Z' fill='white'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
-  background-position: right;
+  background-position: center;
+  transform: translateX(5px);
   z-index: 5;
 }
 
 .max-range::-moz-range-thumb {
   height: 8px;
-  width: 10px;
+  width: 9px;
   border-radius: 50%;
   border: none;
   cursor: pointer;
   pointer-events: auto;
   background-image: url("data:image/svg+xml,%3Csvg width='9' height='6' viewBox='0 0 9 6' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5.27987 5.07814C4.88007 5.55789 4.14322 5.55789 3.74343 5.07813L0.878514 1.64018C0.335749 0.988852 0.798905 0 1.64674 0L7.37666 0C8.2245 0 8.68765 0.988864 8.14487 1.64019L5.27987 5.07814Z' fill='white'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
-  background-position: right;
+  background-position: center;
+  transform: translateX(10px);
   z-index: 5;
 }
 

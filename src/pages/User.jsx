@@ -69,7 +69,7 @@ export default function UserPage() {
               Продажи
             </div>
           </div>
-          <div className="grid grid-cols-5 gap-2">
+          <div className="grid grid-cols-5 gap-2 pb-8">
             {Array.from({ length: 12 }).map((_, index) => (
               <UserProduct
                 key={index}

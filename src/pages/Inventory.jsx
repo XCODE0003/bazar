@@ -240,7 +240,7 @@ function itemsNoProducts() {
           </svg>
           Обмен
         </button>
-        <button className="btn btn-border !py-2 !px-8 h-full">
+        <button className="btn btn-border !py-2 !px-8 gap-1 h-full">
           <svg
             width="14"
             height="14"

@@ -10,8 +10,8 @@ export default function AsideFilter() {
   ];
   const [minPrice, setMinPrice] = useState(1000);
   const [maxPrice, setMaxPrice] = useState(5000);
-  const [rangePrice, setRangePrice] = useState({ min: 1000, max: 5000 });
-  const [maxMinPrice, setMaxMinPrice] = useState([0, 10000]);
+  const [rangePrice, setRangePrice] = useState({ min: 1000, max: 10000 });
+  const [maxMinPrice, setMaxMinPrice] = useState([0, 30000]);
   const [minCondition, setMinCondition] = useState(0);
   const [maxCondition, setMaxCondition] = useState(1);
   const [rangeCondition, setRangeCondition] = useState({ min: 0, max: 1 });
@@ -63,6 +63,23 @@ export default function AsideFilter() {
     }
   };
 
+  const handlePriceTagClick = (min, max) => {
+    setMinPrice(min);
+    setMaxPrice(max);
+    setRangePrice({ min, max });
+  };
+
+  const resetFilters = () => {
+    setMinPrice(1000);
+    setMaxPrice(5000);
+    setRangePrice({ min: 1000, max: 10000 });
+    setMinCondition(0);
+    setMaxCondition(1);
+    setRangeCondition({ min: 0, max: 1 });
+    setRangePhase({ min: 0, max: 9999 });
+    setRarity(rarityOptions[0]);
+  };
+
   return (
     <div className="bg-accent-300 h-fit max-w-[330px] w-full flex-shrink-0 rounded-xl px-4 py-6">
       <div className="input-wrapper">
@@ -107,7 +124,7 @@ export default function AsideFilter() {
             <>
               <Range
                 min={0}
-                max={10000}
+                max={30000}
                 step={100}
                 defaultMinValue={rangePrice.min}
                 defaultMaxValue={rangePrice.max}
@@ -147,15 +164,15 @@ export default function AsideFilter() {
                 </div>
               </div>
               <div className="flex gap-2 items-center w-full justify-between">
-                <div className="tag">
+                <div className="tag cursor-pointer" onClick={() => handlePriceTagClick(0, 1000)}>
                   <svg width="6" height="6" viewBox="0 0 6 6" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M5.15527 1.21484L1.70312 3.16797V3.21191L5.15527 5.05762V5.96582L0.863281 3.56836V2.875L5.15527 0.306641V1.21484Z" fill="#787E87"/>
                   </svg>
                   ₽1000
                 </div>
-                <div className="tag">₽1000-₽5000</div>
-                <div className="tag">₽5000-₽25к</div>
-                <div className="tag">
+                <div className="tag cursor-pointer" onClick={() => handlePriceTagClick(1000, 5000)}>₽1000-₽5000</div>
+                <div className="tag cursor-pointer" onClick={() => handlePriceTagClick(5000, 25000)}>₽5000-₽25к</div>
+                <div className="tag cursor-pointer" onClick={() => handlePriceTagClick(25000, 30000)}>
                   <svg width="6" height="6" viewBox="0 0 6 6" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M0.863281 1.20996V0.301758L5.15527 2.87012V3.56348L0.863281 5.96094V5.05273L4.31543 3.20703V3.16309L0.863281 1.20996Z" fill="#787E87"/>
                   </svg>
@@ -357,7 +374,7 @@ export default function AsideFilter() {
 
           <div className="h-[1px] bg-white/20 w-full"></div>
         </div>
-        <button className="btn btn-primary">Сбросить фильтры</button>
+        <button className="btn btn-primary" onClick={resetFilters}>Сбросить фильтры</button>
       </div>
     </div>
   );
